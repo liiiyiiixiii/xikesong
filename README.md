@@ -10,11 +10,13 @@
 
 ## 先看看餐厅里发生了什么
 
-![红考拉餐厅 3D 仿真：顾客就餐、餐盘循环与后厨补菜](docs/assets/simulation-3d.png)
+![红考拉餐厅 3D 仿真动图：顾客就餐、餐盘循环与后厨补菜](docs/assets/simulation-3d.gif)
 
 在这个 3D 模拟餐厅里，可以观察顾客就餐、旋转线上的餐盘和后厨补菜。下方汇总在店人数、循环餐盘、待补餐盘，以及进店、离店、取菜和补菜事件，让余量变化有一个看得见的场景。
 
-画面支持暂停、重新开始和全屏查看。这里展示的是合成场景的仿真界面截图；下文的厨房看板则展示工作人员查看菜品余量的方式。
+上方是实际运行界面录制的 10 秒循环动图，展示合成场景。完整 3D 界面支持暂停、重新开始和全屏查看；下文的厨房看板展示工作人员查看菜品余量的方式。
+
+[查看高清静态图](docs/assets/simulation-3d.png) · 动图播放遵循读者的 [GitHub 动画设置](https://docs.github.com/en/account-and-profile/how-tos/account-settings/managing-accessibility-settings#managing-motion)。
 
 ## 怎样知道哪些菜需要补？
 
