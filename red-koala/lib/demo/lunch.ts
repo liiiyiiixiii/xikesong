@@ -3,9 +3,10 @@ import events from '../../data/lunch-demo/events.json';
 import manifest from '../../data/lunch-demo/manifest.json';
 import {LunchClock} from "./lunch-clock";
 const globalClock=globalThis as typeof globalThis & {lunchDemoClock?:LunchClock;lunchDemoSession?:string};
-export const clock=globalClock.lunchDemoClock??=new LunchClock();
-const sessionId=globalClock.lunchDemoSession??=crypto.randomUUID();
+export function getLunchClock(){return globalClock.lunchDemoClock??=new LunchClock();}
 export function lunchState(){
+ const clock=getLunchClock();
+ const sessionId=globalClock.lunchDemoSession??=crypto.randomUUID();
  const playback={...clock.read(),sessionId},frame=snapshots[playback.second];
  const dishes=Array.from(new Set(frame.plates.map(p=>p.dishId))).map(id=>{
   const items=frame.plates.filter(p=>p.dishId===id),remainingG=items.reduce((n,p)=>n+p.remainingG,0),fullG=items.length*1000;

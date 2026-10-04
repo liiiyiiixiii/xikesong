@@ -12,6 +12,13 @@
     "build": "npm run build --prefix red-koala",
     "test": "npm test --prefix red-koala && npm test --prefix sample-provider",
     "typecheck": "npm run demo:generate --prefix red-koala && npm run typecheck --prefix red-koala",
-    "check:release": "node scripts/check-release.mjs"
+    "check:release": "node scripts/check-release.mjs",
+    "data:verify": "python3 scripts/dataset.py --verify-only",
+    "data:extract": "python3 scripts/dataset.py",
+    "demo": "node scripts/demo.mjs",
+    "demo:prepare": "node scripts/demo.mjs prepare",
+    "demo:seed": "node scripts/demo-seed.mjs",
+    "simulate:profile": "npm run data:extract && node scripts/profile-simulation.mjs",
+    "demo:smoke": "node scripts/demo-smoke.mjs"
   }
 }

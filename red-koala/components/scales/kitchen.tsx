@@ -9,7 +9,7 @@ import { CookingPot } from "lucide-react";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import type { DishRealtime, Realtime } from "@/lib/scales/types";
-import { usePolling, weight, clockTime } from "./shared";
+import { usePolling, weight, clockTime, request } from "./shared";
 
 import { createOrbit, orbitPoint, dishSlots, orbitFrame, slotTransform, FEATURED_COUNT, ORBIT_DURATION } from "./kitchen-orbit";
 import type { Orbit, OrbitSlot } from "./kitchen-orbit";
@@ -28,8 +28,16 @@ function DishContent({dish,disconnected}:{dish:DishRealtime;disconnected:boolean
 export default function Kitchen({demo=false}:{demo?:boolean}){return demo?<KitchenBoard demo/>:<FreshnessProvider><KitchenBoard/></FreshnessProvider>;}
 function KitchenBoard({demo=false}:{demo?:boolean}) {
  const [index,setIndex]=useState(0);
- const {data,error,loading}=usePolling<Realtime & {playback?:{paused:boolean;second:number;cycle:number};customers?:{count:number}}>(demo?"/api/demo/lunch/state":"/api/scales/state",1000);
+ const {data,error,loading,refresh}=usePolling<Realtime & {playback?:{paused:boolean;second:number;cycle:number};customers?:{count:number}}>(demo?"/api/demo/lunch/state":"/api/scales/state",1000);
  const paused=!!data?.playback?.paused;
+ const [controlBusy,setControlBusy]=useState(false),[controlError,setControlError]=useState('');
+ async function control(action:'pause'|'resume'|'restart') {
+  setControlBusy(true);setControlError('');
+  try {await request('/api/demo/lunch/control',{action});if(action==='restart')setIndex(0);refresh();}
+  catch(e){setControlError(e instanceof Error?e.message:'演示控制失败');}
+  finally{setControlBusy(false);}
+ }
+
  const dishes=bowlCards(data?.dishes??[]),count=dishes.length,focusCount=Math.min(FEATURED_COUNT,count),start=index%Math.max(count,1);
  const surface=useRef<HTMLDivElement>(null),cardNodes=useRef(new Map<string,HTMLElement>());
  const previous=useRef<{orbit:Orbit;slots:Map<string,OrbitSlot>;key:string}|null>(null);
@@ -91,6 +99,11 @@ function KitchenBoard({demo=false}:{demo?:boolean}) {
     </div>
    </div>:<div className="k-board-empty"><CookingPot size={54}/><h1>{loading?"正在连接设备":"等待菜品上台"}</h1><p>{error?"暂时无法连接，正在重试":"管理端配置秤与菜品后，余量将在这里显示。"}</p></div>}
   </section>
-  <footer className="k-board-footer"><div className="k-board-update"><span>{error?"连接中断 · 正在重连":"更新于 "+clockTime(data?.at)}</span>{count>0&&<span>{focusCount} 个重点碗 · {paused?"已暂停":"循环展示"}</span>}</div></footer>
+  <footer className="k-board-footer"><div className="k-board-update"><span>{error?"连接中断 · 正在重连":"更新于 "+clockTime(data?.at)}</span>{count>0&&<span>{focusCount} 个重点碗 · {paused?"已暂停":"循环展示"}</span>}</div>{demo&&<div className="lunch-demo-controls">
+   <span>合成午餐仿真 · {Math.floor((data?.playback?.second??0)/60).toString().padStart(2,'0')}:{((data?.playback?.second??0)%60).toString().padStart(2,'0')} / 10:00 · 在座 {data?.customers?.count??'—'} 人</span>
+   <button className="scale-button" disabled={controlBusy||!data} onClick={()=>void control(paused?'resume':'pause')}>{paused?'继续演示':'暂停演示'}</button>
+   <button className="scale-button" disabled={controlBusy||!data} onClick={()=>void control('restart')}>重新开始</button>
+   {controlError&&<span role="alert">{controlError}</span>}
+  </div>}</footer>
  </main>;
 }

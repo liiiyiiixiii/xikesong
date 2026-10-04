@@ -35,6 +35,12 @@
 
 > 图片来自已有演示环境，包含合成数据或离线状态；用于展示交互，不是生产经营数据或效果承诺。原型界面保留“红考拉”场景标识。
 
+### 04 · 可操作的午餐仿真
+
+![午餐仿真：42 个碗位与暂停、继续、重新开始控制](docs/assets/demo.png)
+
+本轮在完整发布版本中实测。打开 `/demo/lunch/kitchen`，体验合成午餐过程；底部按钮控制仿真时间。
+
 ## 从观测到决策
 
 ```mermaid
@@ -53,22 +59,41 @@ flowchart LR
 
 本仓库包含完整业务源码：当前与历史画像、预测模型、AI 工具与提示词、管理和厨房界面、称重处理、数据库迁移、模拟器、测试及技术文档。供应调整由人确认；真实硬件与外部系统联调仍需验证。
 
+## 五项完整交付
+
+| 内容 | 源码 / 数据 | 演示方式 |
+| --- | --- | --- |
+| 可演示前端 | `red-koala/app`、`components` | 管理端、厨房端、智能分析 |
+| 演示游戏 | `app/demo/lunch`、`lib/demo` | 午餐仿真，暂停 / 继续 / 重启 |
+| 真实后端 | `app/api`、`lib`、`drizzle` | 本地 Worker + D1，真实 HTTP 接入与持久化 |
+| 完整数据集 | [datasets](datasets/README.md) | 33 天、36 菜、42 碗、1,188 批次；约 16 MB 压缩包 |
+| 用户画像模拟程序 | `sample-provider/lib`、`scripts/profile-simulation.mjs` | 顾客行为生成、日观测画像及完整页面分析 |
+
 ## 本地体验
 
-需要 **Node.js 24**。在仓库根目录：
+需要 **Node.js 24、Python 3.9+**。在仓库根目录：
 
 ```sh
 npm run install:all
-npm run build
+npm run demo
 ```
 
-首次运行需初始化本地数据库、配置菜单和设备，然后 `npm run dev`。完整步骤见 [开发与初始化指南](docs/DEVELOPMENT.md)。AI 解读需要自行配置模型密钥，普通界面和统计不依赖模型密钥。
+保持服务运行，另一终端导入完整合成数据：
 
-| 入口 | 地址 |
-| --- | --- |
-| 管理端 | `/admin` |
-| 厨房端 | `/kitchen` |
-| 智能分析 | `/admin?view=intelligence` |
+```sh
+npm run demo:seed
+```
+
+默认访问 **http://127.0.0.1:5273**。午餐游戏 `/demo/lunch/kitchen` 无需等待历史导入；管理端 `/admin`、厨房端 `/kitchen`、画像 `/admin?view=intelligence` 在导入完成后展示完整历史。
+
+```sh
+npm run demo:smoke        # 验证演示页面及真实 API 控制
+npm run simulate:profile # 从完整观测数据计算离线画像
+```
+
+[完整演示指南](docs/DEMO.md) · [数据集与校验](datasets/README.md) · [常规开发指南](docs/DEVELOPMENT.md)
+
+AI 文字解读需要自行配置模型密钥；本地统计与画像算法不依赖联网模型。演示数据和用户行为均为固定种子合成，不代表实际门店或真实顾客。
 
 ## 工程结构
 
@@ -76,7 +101,8 @@ npm run build
 red-koala/          完整应用：页面、API、领域逻辑、迁移与测试
 sample-provider/    独立模拟器、合成历史生成与验证
 ui-preview/         浏览器检查脚本
-scripts/            发布清单检查
+datasets/           完整合成数据压缩包与校验清单
+scripts/            演示启动、数据导入、画像模拟与发布检查
 docs/               开发指南、验证记录与产品展示
 ```
 

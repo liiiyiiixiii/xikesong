@@ -11,6 +11,7 @@ jobs:
         with:
           node-version: 24
       - run: npm run check:release
+      - run: npm run data:verify
   application:
     runs-on: ubuntu-latest
     defaults:
@@ -27,6 +28,28 @@ jobs:
       - run: npm test
       - run: npm run demo:generate && npm run typecheck
       - run: npm run build
+      - run: npm run simulate:profile
+        working-directory: .
+      - name: Verify real demo runtime
+        working-directory: .
+        run: |
+          node scripts/demo.mjs > /tmp/zhishan-demo.log 2>&1 &
+          demo_pid=$!
+          trap 'kill "$demo_pid" 2>/dev/null || true' EXIT
+          ready=0
+          for attempt in $(seq 1 90); do
+            if curl --fail --silent http://127.0.0.1:5273/api/demo/lunch/state > /dev/null; then
+              ready=1
+              break
+            fi
+            if ! kill -0 "$demo_pid" 2>/dev/null; then
+              echo "Demo server exited before readiness"
+              exit 1
+            fi
+            sleep 2
+          done
+          test "$ready" = 1
+          npm run demo:smoke
   sample-provider:
     runs-on: ubuntu-latest
     defaults:

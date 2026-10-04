@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("../", import.meta.url));
 const allowed = new Set(JSON.parse(await readFile(path.join(root, "PUBLIC_FILES.json"), "utf8")));
-const excluded = new Set([".git", "node_modules", ".next", ".vinext", ".wrangler", ".sites-runtime", ".agents", ".codex", "dist", "output", "outputs", "backups", "coverage", "tmp"]);
+const excluded = new Set([".git", ".demo-state", "node_modules", ".next", ".vinext", ".wrangler", ".sites-runtime", ".agents", ".codex", "dist", "output", "outputs", "backups", "coverage", "tmp"]);
 const issues = [], seen = new Set();
 async function walk(relative = "") {
  for (const name of await readdir(path.join(root, relative))) {

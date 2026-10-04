@@ -23,8 +23,8 @@ for(let i=1;i<=manifest.expectedBatches;i++){const batch=read(`batches/${String(
 // Same-content retry must be a no-op. Different content with same key must fail.
 const first=read('batches/0001.json');assert.equal((await post('/api/preferences/import',first)).duplicate,true);
 const conflict={...first,payload:first.payload+' '};conflict.checksum=hash(conflict.payload);await assert.rejects(()=>post('/api/preferences/import',conflict),/冲突/);
-const denied=await fetch(base+'/api/preferences/import',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(first)});assert.equal(denied.status,401);
-const blocked=await fetch(base+'/api/scales/state');assert.equal(blocked.status,503);
+const denied=await fetch(base+'/api/preferences/import',{method:'POST',headers:{'content-type':'application/json',Connection:'close'},body:JSON.stringify({version:2,action:'status',datasetId:manifest.datasetId}),signal:AbortSignal.timeout(10000)});assert.equal(denied.status,401);await denied.arrayBuffer();
+const blocked=await fetch(base+'/api/scales/state',{signal:AbortSignal.timeout(10000)});assert.equal(blocked.status,503);await blocked.arrayBuffer();
 console.log('Authentication, idempotency, conflict and maintenance checks passed.');
 const dates=[...new Set([...expected.values()].map(b=>b.daily.date))].sort(),forecasts=[];
 for(const date of dates){
