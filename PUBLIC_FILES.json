@@ -1,0 +1,23 @@
+[
+  ".github/workflows/ci.yml",
+  ".gitignore",
+  "PUBLIC_FILES.json",
+  "README.md",
+  "docs/PROVENANCE.md",
+  "docs/PUBLIC-BOUNDARY.md",
+  "examples/demo.ts",
+  "examples/fixture.ts",
+  "package-lock.json",
+  "package.json",
+  "scripts/check-public.mjs",
+  "src/adapters/csv.ts",
+  "src/adapters/history-csv.ts",
+  "src/adapters/unavailable-forecast.ts",
+  "src/application/analyze.ts",
+  "src/application/ports.ts",
+  "src/domain/dataset.ts",
+  "src/domain/menu.ts",
+  "src/domain/types.ts",
+  "tests/foundation.test.ts",
+  "tsconfig.json"
+]
