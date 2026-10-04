@@ -1,0 +1,13 @@
+import { mkdir,writeFile } from "node:fs/promises";
+import { createRestaurant,advance,validateState,layout,summary } from "../lib/restaurant.mjs";
+const option=(name,fallback)=>{const index=process.argv.indexOf(name);return index<0?fallback:Number(process.argv[index+1]);};
+const duration=option("--duration",3600),seed=option("--seed",20261003);
+if(!Number.isInteger(duration)||duration<1||duration>86400||!Number.isInteger(seed))throw new Error("duration 必须是 1–86400 秒，seed 必须是整数");
+const state=createRestaurant({seed}),events=state.initialEvents.splice(0);
+for(let i=0;i<duration;i++)events.push(...advance(state));
+validateState(state);
+const output=new URL("../output/",import.meta.url);await mkdir(output,{recursive:true});
+await writeFile(new URL("layout.json",output),JSON.stringify(layout,null,2));
+await writeFile(new URL("session.ndjson",output),events.map(e=>JSON.stringify(e)).join("\n")+"\n");
+await writeFile(new URL("session-summary.json",output),JSON.stringify({...summary(state),seed,plates:state.plates},null,2));
+console.log(JSON.stringify(summary(state),null,2));

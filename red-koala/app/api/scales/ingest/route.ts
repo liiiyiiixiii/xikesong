@@ -1,0 +1,7 @@
+import { historyGuard } from "@/lib/preferences/history-state";
+import { z } from "zod";
+import { failure } from "@/lib/http";
+import { authenticate } from "@/lib/scales/credentials";
+import { ingest } from "@/lib/scales/repository";
+const sampleSchema = z.object({ scaleId: z.string().min(1).max(80), bootId: z.string().min(1).max(100), sequence: z.number().int().nonnegative().max(Number.MAX_SAFE_INTEGER), sampledAt: z.string().datetime({ offset: true }), grossG: z.number().finite().min(0).max(1e7) }).strict();
+export async function POST(req: Request) { const historyBlocked=await historyGuard(true);if(historyBlocked)return historyBlocked;  try { const source = await authenticate(req); if (!source) return Response.json({ error: "设备凭证无效" }, { status: 401 }); const text = await req.text(); if (text.length > 300000) throw new Error("请求过大"); const input = z.object({ samples: z.array(sampleSchema).min(1).max(1000) }).strict().parse(JSON.parse(text)), now = Date.now(); const earliestDate = new Date(Math.min(...input.samples.map(sample => Date.parse(sample.sampledAt))) + 8 * 3600000).toISOString().slice(0, 10); const dateBlocked = await historyGuard(true, earliestDate); if (dateBlocked) return dateBlocked; for (const sample of input.samples) { if (Date.parse(sample.sampledAt) > now + 5000) throw new Error("采样时间超前，请校准设备时钟"); if (Date.parse(sample.sampledAt) < now - 86400000) throw new Error("采样时间超过24小时，不能补算实时取用"); } return Response.json(await ingest(source, input.samples, new Date(now).toISOString())); } catch (e) { return failure(e); } }

@@ -1,0 +1,70 @@
+// Run against the local app. All state/action requests are intercepted; no device
+// data is written. Requires Playwright (or PLAYWRIGHT_MODULE pointing to its ESM
+// entry). Optional: UI_BASE_URL, PLAYWRIGHT_EXECUTABLE_PATH, UI_SCREENSHOT_DIR.
+import { mkdir } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const screenshotDir = process.env.UI_SCREENSHOT_DIR || path.join(tmpdir(), 'red-koala-realtime-ui');
+await mkdir(screenshotDir, { recursive: true });
+import assert from 'node:assert/strict';
+const browser = await chromium.launch({headless:true, executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH});
+const page = await browser.newPage({viewport:{width:1366,height:768}});
+const names=['番茄炒蛋','宫保鸡丁','鱼香肉丝','红烧肉','清蒸鲈鱼','地三鲜','麻婆豆腐','蒜蓉西兰花','糖醋里脊','香菇炖鸡','清炒时蔬','酸辣土豆丝','手撕包菜','冬瓜排骨','肉末茄子','回锅肉','干煸四季豆','土豆烧牛肉','香煎带鱼','蒜苔肉丝','咖喱鸡块','蒸南瓜','葱油鸡','小炒黄牛肉','青椒炒蛋','油焖大虾','海带排骨汤','白灼菜心','豆角焖肉','红烧狮子头','孜然牛肉','虾仁蒸蛋','菌菇炒肉片','玉米排骨汤','家常烧豆腐','荷塘小炒','香辣鸡翅','蚝油生菜','豉汁蒸排骨','招牌金汤菌菇鲜虾豆腐煲','清炒莴笋','莲藕排骨汤'];
+let state = {source:'live',at:new Date().toISOString(), dishes:names.map((name,i)=>{
+ const status=i===1||i===10||i===24?'low':i===4||i===19?'empty':i===13?'offline':i===26?'partial':i===31?'anomaly':'okay';
+ const percent=status==='low'?12:status==='empty'?0:i===7?128:38+(i*7)%57;
+ return {id:`dish-${i}`,name,status,percent:['offline','partial','anomaly'].includes(status)?null:percent,remainingG:percent*20,fullG:2000,overfull:percent>100,coverage:1,rateGPerMinute:i===26?null:18+i,scales:[{id:`scale-${i}`,dishId:`dish-${i}`,dishName:name,tareG:200,fullG:2000,noiseG:5,enabled:true,updatedAt:new Date().toISOString(),netG:status==='partial'?null:percent*20,percent:status==='partial'?null:percent,status:status==='offline'?'offline':status==='anomaly'?'anomaly':status==='empty'?'empty':'active',lastAt:new Date().toISOString()}],trend:Array.from({length:30},(_,j)=>({at:new Date(Date.now()-(30-j)*60000).toISOString(),takeG:Math.round(20+16*Math.sin((j+i)/3)),coverage:j===12||j===13?.2:1}))};
+}),pending:Array.from({length:18},(_,i)=>({id:`event-${i}`,source:'live',dishId:`dish-${i}`,scaleId:`scale-${i}`,at:new Date().toISOString(),receivedAt:new Date().toISOString(),kind:'pending',weightG:i===1?-250:180+i*10}))};
+let outage=false;const errors=[];const warnings=[];const actions=[];let reads=0;
+page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='warning')warnings.push(m.text());});
+await page.route('**/api/scales/state?*',route=>{reads++;return outage?route.fulfill({status:503,json:{error:'测试断连'}}):route.fulfill({json:state});});
+await page.route('**/api/scales/actions',async route=>{const payload=route.request().postDataJSON();actions.push(payload);if(payload.action==='resolve')state.pending=state.pending.filter(e=>e.id!==payload.eventId);await route.fulfill({json:{ok:true}});});
+await page.route('**/api/freshness*',route=>route.fulfill({json:{at:new Date().toISOString(),timers:[],rules:[],catalog:[],feedback:[],suggestions:[],decisions:[]}}));
+try {
+ await page.goto(`${process.env.UI_BASE_URL || 'http://127.0.0.1:5173'}/admin`);await page.locator('.live-dish').first().waitFor();
+ assert.equal(await page.locator('.live-dish').count(),42);
+ const layout=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,cards:[...document.querySelectorAll('.live-dish')].map(el=>{const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,bottom:r.bottom,height:r.height};})}));
+ assert(layout.scrollWidth<=1366);assert(Math.max(...layout.cards.map(c=>c.bottom))<=768,JSON.stringify(layout));
+ assert.equal(new Set(layout.cards.map(c=>c.x)).size,7);assert.equal(new Set(layout.cards.map(c=>c.y)).size,6);
+ await page.screenshot({path:path.join(screenshotDir, 'realtime-42-desktop.png')});
+ const order=await page.locator('.live-dish-name').allTextContents();
+ assert.equal(await page.locator('.status-partial .live-dish-amount').innerText(), '—\n—');
+ assert.equal(await page.locator('.live-dish').nth(7).locator('.live-meter>span').evaluate(el=>el.style.width), '100%');
+ await page.locator('.filter-empty').click();assert.equal(await page.locator('.live-dish').count(),2);
+ await page.locator('.filter-issues').click();assert.equal(await page.locator('.live-dish').count(),3);
+ await page.locator('.filter-low').click();assert.equal(await page.locator('.live-dish').count(),3);
+ await page.getByRole('searchbox',{name:'搜索菜品'}).fill('宫保');assert.equal(await page.locator('.live-dish').count(),1);
+ await page.getByRole('searchbox',{name:'搜索菜品'}).fill('不存在');await page.getByRole('button',{name:'清除筛选'}).click();assert.equal(await page.locator('.live-dish').count(),42);
+ const first=page.locator('.live-dish').first();await first.click();await page.getByRole('dialog',{name:'番茄炒蛋',exact:true}).waitFor();
+ await page.keyboard.press('Tab');assert(await page.evaluate(()=>!!document.activeElement.closest('[role=dialog]')));
+ await page.keyboard.press('Shift+Tab');assert(await page.evaluate(()=>!!document.activeElement.closest('[role=dialog]')));
+ const countBefore=reads;state.dishes[0].percent=65;state.dishes[0].remainingG=1300;state.dishes[0].scales[0].netG=1300;state.dishes[0].scales[0].percent=65;
+ await page.waitForFunction(()=>document.querySelector('.live-detail-amount strong')?.textContent==='65%');assert(reads>countBefore);
+ await page.screenshot({path:path.join(screenshotDir, 'realtime-detail.png')});
+ await page.keyboard.press('Escape');await page.getByRole('dialog').waitFor({state:'hidden'});await page.waitForFunction(()=>document.activeElement===document.querySelector(".live-dish"));
+ assert.deepEqual(await page.locator('.live-dish-name').allTextContents(),order);
+ await page.locator('.live-pending-button').click();assert.equal(await page.locator('.live-pending-list>div').count(),18);
+ const processButton=page.locator('.live-pending-list button').first();await processButton.click();assert.equal(await page.locator('[role=dialog]').count(),2);
+ await page.keyboard.press('Escape');assert.equal(await page.getByRole('dialog').count(),1);await page.waitForFunction(()=>document.activeElement===document.querySelector(".live-pending-list button"));
+ await processButton.click();await page.getByRole('button',{name:'确认处理',exact:true}).click();await page.waitForFunction(()=>document.querySelectorAll('.live-pending-list>div').length===17);assert.equal(actions.at(-1).action,'resolve');
+ await page.locator('.live-pending-list button').first().click();assert.equal(await page.getByRole('button',{name:'已丢弃',exact:true}).count(),0);await page.keyboard.press('Escape');await page.keyboard.press('Escape');
+ await page.getByRole('button',{name:'记录撤下',exact:true}).click();await page.getByRole('spinbutton',{name:'撤下重量（克）'}).fill('100');await page.getByRole('button',{name:'保存记录'}).click();await page.getByRole('dialog').waitFor({state:'hidden'});assert.equal(actions.at(-1).weightG,100);assert(actions.at(-1).requestId);
+ await page.getByRole('button',{name:'记录撤下',exact:true}).click();outage=true;await page.getByRole('button',{name:'保存记录'}).waitFor();await page.waitForFunction(()=>document.querySelector('.live-heading').textContent.includes('连接中断'));
+ assert(await page.getByRole('button',{name:'保存记录'}).isDisabled());await page.keyboard.press('Escape');
+ assert((await page.locator('.live-dish-amount').allTextContents()).every(s=>!s.includes('%')));assert((await page.locator('.live-summary strong').allTextContents()).every(s=>s==='—'));assert(await page.locator('.live-pending-button').isDisabled());
+ await first.click();assert.equal(await page.locator('.live-details .scale-sparkline').count(),0);await page.keyboard.press('Escape');
+ await page.screenshot({path:path.join(screenshotDir, 'realtime-disconnected.png')});
+ outage=false;await page.waitForFunction(()=>document.querySelector('.live-dish-amount')?.textContent.includes('65%'));
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(screenshotDir, 'realtime-mobile.png')});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.setViewportSize({width:1366,height:768});
+ state.dishes.push({...state.dishes[0],id:'dish-42',name:'第 43 道菜',scales:[{...state.dishes[0].scales[0],id:'scale-42',dishId:'dish-42',dishName:'第 43 道菜'}]});
+ await page.waitForFunction(()=>document.querySelectorAll('.live-dish').length===43);
+ assert(await page.locator('.live-dish').last().evaluate(el=>el.getBoundingClientRect().bottom>innerHeight));
+ await page.locator('.live-dish').last().click();
+ state.dishes.pop();await page.getByText('该菜品已不在当前供菜列表中。').waitFor();await page.keyboard.press('Escape');
+ await page.waitForFunction(()=>document.activeElement===document.querySelector('.live-search input'));
+ state.dishes=[];state.pending=[];await page.getByRole('button',{name:'配置设备与菜品'}).waitFor();
+ assert.equal(errors.length,0,errors.join('\n'));assert.equal(warnings.length,0,warnings.join('\n'));
+ console.log(JSON.stringify({layout:{columns:7,rows:6,card:layout.cards[0],lastBottom:Math.max(...layout.cards.map(c=>c.bottom))},checks:'filter/search; live drawer refresh; stable order; nested Escape/focus; 18 pending events; resolve/manual requests; disconnect/recovery; mobile; empty',actions,errors,warnings},null,2));
+} catch(e) {await page.screenshot({path:path.join(screenshotDir, 'realtime-failure.png')});console.log('PAGE', (await page.locator('body').innerText()).slice(-3000));console.log({errors,warnings});throw e;} finally {await browser.close();}

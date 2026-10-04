@@ -1,0 +1,72 @@
+// Run with the local app running. Browser-only fixtures intercept every API;
+// no production records are written. Optional PLAYWRIGHT_MODULE,
+// PLAYWRIGHT_EXECUTABLE_PATH, UI_BASE_URL and UI_SCREENSHOT_DIR.
+import assert from 'node:assert/strict';
+import { mkdir } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const screenshotDir=process.env.UI_SCREENSHOT_DIR || path.join(tmpdir(),'red-koala-daily-ui');
+await mkdir(screenshotDir,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH});
+const page=await browser.newPage({viewport:{width:1366,height:768}});
+const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+const dayBefore=new Date(Date.parse(`${today}T12:00:00Z`)-86400000).toISOString().slice(0,10);
+const nextDate=date=>new Date(Date.parse(`${date}T12:00:00Z`)+86400000).toISOString().slice(0,10);
+const names=['番茄炒蛋','宫保鸡丁','鱼香肉丝','红烧肉','清蒸鲈鱼','地三鲜','麻婆豆腐','蒜蓉西兰花','糖醋里脊','香菇炖鸡','清炒时蔬','酸辣土豆丝','手撕包菜','冬瓜排骨','肉末茄子','回锅肉','干煸四季豆','土豆烧牛肉','香煎带鱼','蒜苔肉丝','咖喱鸡块','蒸南瓜','葱油鸡','小炒黄牛肉','青椒炒蛋','油焖大虾','海带排骨汤','白灼菜心','豆角焖肉','红烧狮子头','孜然牛肉','虾仁蒸蛋','菌菇炒肉片','玉米排骨汤','家常烧豆腐','荷塘小炒','香辣鸡翅','蚝油生菜','豉汁蒸排骨','招牌金汤菌菇鲜虾豆腐煲','清炒莴笋','莲藕排骨汤'];
+const dishes=names.map((name,i)=>({dishId:`dish-${i}`,name,takeG:i===3?0:4800+i*173,refillG:i===3?0:6500+i*190,wasteG:i%5===0?200+i*10:0,remainingG:i===3?null:1800,retainedG:0,coverage:i===3?0:1,emptyMinutes:i===5?15:0,unresolved:i===1?2:0}));
+const profile=names.map((name,i)=>({dishId:`dish-${i}`,name,unit:'g',weightedTake:2000+i*100,takeG:25000+i*520,share:i===3?null:(i+1)/1000,status:i===3?'数据不足，供应或称重记录不完整':'有效样本充足',samples:i===3?1:7,history:Array.from({length:7},(_,j)=>({date:dayBefore,quantity:j===2&&i===3?null:2200+i*110+j*220+Math.sin(j+i)*450,supply:'充分'}))}));
+profile.push({...profile[0],dishId:'profile-only',name:'仅有历史记录的菜品'});
+const makeForecast=date=>({id:`forecast-${date}`,source:'live',originDate:date,targetDate:nextDate(date),cutoff:new Date().toISOString(),generatedAt:new Date().toISOString(),late:false,buffer:.1,lines:names.map((name,i)=>({dishId:`dish-${i}`,name,unit:'g',demand:5000,low:4000,high:6000,suggested:5500,samples:7,confidence:'reference',explanation:'最近七天取用与星期规律。'}))});
+const forecasts=[makeForecast(today)],plans=[],executions=[],actions=[],errors=[];
+let empty=false,failed=false;const datesRead=[];
+page.on('pageerror',e=>errors.push(e.message));
+await page.route('**/api/scales/summary?*',route=>{const date=new URL(route.request().url()).searchParams.get('date');datesRead.push(date);return route.fulfill({json:{source:'live',date,asOf:new Date().toISOString(),final:date!==today,dishes:empty?[]:dishes}});});
+await page.route('**/api/preferences*',async route=>{
+ if(route.request().method()==='GET')return failed?route.fulfill({status:503,json:{error:'测试连接中断'}}):route.fulfill({json:{source:'live',asOf:new Date().toISOString(),dates:[today],profile:empty?[]:profile,forecasts:empty?[]:forecasts,plans,executions}});
+ const body=route.request().postDataJSON();actions.push(body);
+ if(body.action==='execution')executions.push({...body,at:new Date().toISOString()});
+ if(body.action==='confirm')plans.push({forecastId:body.forecastId,date:body.date,lines:body.lines,at:new Date().toISOString()});
+ if(body.action==='generate')forecasts.push({...makeForecast(body.origin),buffer:body.buffer});
+ return route.fulfill({json:{ok:true}});
+});
+await page.route('**/api/preferences/history',route=>route.fulfill({json:{phase:null}}));
+await page.route('**/api/freshness*',route=>route.fulfill({json:{at:new Date().toISOString(),timers:[],rules:[],catalog:[],feedback:[],suggestions:[],decisions:[]}}));
+try {
+ await page.goto(`${process.env.UI_BASE_URL || 'http://127.0.0.1:5173'}/admin?view=daily`);
+ const overview=page.locator('#daily-panel-overview');await overview.locator('tbody tr').first().waitFor();
+ assert.equal(await overview.locator('tbody tr').count(),42);
+ const layout=await page.evaluate(()=>{
+  const region=document.querySelector('#daily-panel-overview .daily-table-scroll').getBoundingClientRect();
+  return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,fullyVisibleRows:[...document.querySelectorAll('#daily-panel-overview tbody tr')].filter(el=>{const r=el.getBoundingClientRect();return r.top>=region.top&&r.bottom<=region.bottom&&r.bottom<=innerHeight;}).length,regionBottom:region.bottom};
+ });
+ assert(layout.scrollWidth<=1366,JSON.stringify(layout));assert(layout.fullyVisibleRows>=10,JSON.stringify(layout));
+ assert(await overview.locator('.daily-table-scroll').evaluate(el=>el.scrollWidth<=el.clientWidth+1));
+ await page.screenshot({path:path.join(screenshotDir,'daily-summary-desktop.png')});
+ await overview.getByRole('button',{name:'需关注',exact:true}).click();assert.equal(await overview.locator('tbody tr').count(),3);
+ await page.getByRole('searchbox',{name:'搜索总结菜品'}).fill('宫保');assert.equal(await overview.locator('tbody tr').count(),1);
+ await page.getByRole('searchbox',{name:'搜索总结菜品'}).fill('不存在');await overview.getByRole('button',{name:'清除筛选'}).click();assert.equal(await overview.locator('tbody tr').count(),42);
+ await overview.getByRole('button',{name:'有报损',exact:true}).click();assert.equal(await overview.locator('tbody tr').count(),9);
+ await overview.getByRole('button',{name:'全部',exact:true}).click();await page.getByLabel('菜品排序').selectOption('take');assert((await overview.locator('tbody tr').first().innerText()).startsWith(names[41]));
+ await page.getByLabel('菜品排序').selectOption('default');
+ await overview.getByRole('button',{name:'记录',exact:true}).first().click();await page.getByRole('dialog',{name:'记录实际备料',exact:true}).waitFor();
+ await page.getByLabel('实际备料（克）',{exact:true}).fill('6400');await page.getByRole('button',{name:'保存实际备料',exact:true}).click();
+ await page.waitForFunction(()=>document.querySelector('.daily-execution input')?.value==='6400');assert.equal(actions.at(-1).action,'execution');assert.equal(actions.at(-1).prepared,6400);assert.equal(actions.at(-1).dishId,'dish-0');
+ await page.screenshot({path:path.join(screenshotDir,'daily-execution-drawer.png')});
+ await page.keyboard.press('Escape');await page.getByRole('dialog').waitFor({state:'hidden'});
+ await page.waitForFunction(()=>document.activeElement===document.querySelector('.daily-row-action'));
+ await page.getByRole('tab',{name:'七日趋势',exact:true}).click();assert.equal(await page.locator('#daily-panel-trends tbody tr').count(),43);
+ await page.screenshot({path:path.join(screenshotDir,'daily-trends.png')});
+ await page.getByRole('tab',{name:'七日趋势',exact:true}).focus();await page.keyboard.press('ArrowRight');assert.equal(await page.getByRole('tab',{name:'备料计划',exact:true}).getAttribute('aria-selected'),'true');
+ await page.getByLabel('番茄炒蛋确认备料量（克）').fill('6200');await page.getByRole('button',{name:'确认备料计划',exact:true}).click();await page.getByText('请为修改量或试供量填写简短理由。').waitFor();
+ await page.getByLabel('番茄炒蛋修改或试供理由').fill('午餐需求增加');
+ await page.getByRole('tab',{name:'当日概览',exact:true}).click();await page.getByRole('tab',{name:'备料计划',exact:true}).click();assert.equal(await page.getByLabel('番茄炒蛋确认备料量（克）').inputValue(),'6200');
+ await page.getByRole('button',{name:'确认备料计划',exact:true}).click();await page.getByRole('button',{name:'更新确认计划',exact:true}).waitFor();assert.equal(actions.at(-1).action,'confirm');assert.equal(actions.at(-1).lines[0].quantity,6200);assert.equal(actions.at(-1).lines.length,42);
+ await page.screenshot({path:path.join(screenshotDir,'daily-plan.png')});
+ await page.getByLabel('查看日期',{exact:true}).fill(dayBefore);await page.getByRole('button',{name:'生成建议',exact:true}).waitFor();await page.getByRole('button',{name:'生成建议',exact:true}).click();await page.getByRole('button',{name:'确认备料计划',exact:true}).waitFor();assert.equal(actions.at(-1).origin,dayBefore);assert(datesRead.includes(dayBefore));
+ await page.getByRole('tab',{name:'当日概览',exact:true}).click();await page.setViewportSize({width:390,height:844});
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:path.join(screenshotDir,'daily-summary-mobile.png')});
+ empty=true;await page.getByLabel('查看日期',{exact:true}).fill(today);await page.getByText('这一天还没有称重统计').waitFor();assert(await page.getByRole('button',{name:'记录实际备料',exact:true}).isDisabled());
+ failed=true;await page.getByLabel('查看日期',{exact:true}).fill(dayBefore);await page.getByText(/部分数据更新失败/).waitFor();
+ assert.equal(errors.length,0,errors.join('\n'));console.log(JSON.stringify({layout,checks:'search/filters/sort; execution save and focus; all profiles; keyboard tabs; plan reason validation; drafts preserved across tabs; confirmation; date and generation; mobile; empty/error',actions:actions.map(a=>a.action),errors},null,2));
+} catch(e){await page.screenshot({path:path.join(screenshotDir,'daily-failure.png')});console.log((await page.locator('body').innerText()).slice(-2500));throw e;} finally{await browser.close();}

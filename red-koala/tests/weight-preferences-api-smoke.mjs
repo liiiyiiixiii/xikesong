@@ -1,0 +1,24 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+const base=process.env.LOCAL_URL??"http://127.0.0.1:5173";
+let token;
+async function call(path,body,expected=200){const r=await fetch(base+path,body?{method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${token}`},body:JSON.stringify(body),signal:AbortSignal.timeout(60000)}:{signal:AbortSignal.timeout(60000)});const result=await r.json();assert.equal(r.status,expected,result.error??JSON.stringify(result));return result;}
+token=(await call("/api/scales/devices",{action:"credential"})).token;
+const dataset=JSON.parse(await readFile(new URL("./fixtures/history.json",import.meta.url),"utf8"));
+const unauthenticated=await fetch(base+"/api/preferences/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({version:1,dataset})});assert.equal(unauthenticated.status,401);
+await call("/api/preferences/import",{version:2,dataset},400);
+await call("/api/preferences/import",{source:"test",files:{}},400);
+await call("/api/preferences/import",{version:1,dataset:{...dataset,catalog:dataset.catalog.map(c=>({...c,pieceWeightG:25}))}},400);
+const imported=await call("/api/preferences/import",{version:1,dataset});assert.equal(imported.days,1080);await call("/api/preferences/import",{version:1,dataset});await call("/api/preferences/import",{version:1,dataset,source:"demo"},400);
+const before=await call("/api/preferences?asOf=2026-10-02T23:59:59%2B08:00");assert(before.catalog.every(c=>c.unit==="g"));assert(before.profile.every(p=>!("perGuest" in p)));assert.equal(before.daily.dishes.length,12);assert(before.daily.dishes.some(d=>d.takeG>0));
+const first=await call("/api/preferences",{action:"generate",origin:"2026-10-02"});const again=await call("/api/preferences",{action:"generate",origin:"2026-10-02"});assert.equal(first.id,again.id);assert(first.lines.every(l=>l.unit==="g"));assert(first.lines.filter(l=>l.model).length>=12);assert(first.lines.filter(l=>l.model).every(l=>l.model.algorithm==="weighted-ridge-log1p-grams-v2"&&l.model.featureNames.length===13&&!l.model.featureNames.some(n=>n.includes("人数"))));
+const forced=await call("/api/preferences",{action:"generate",origin:"2026-10-02",force:true});assert.notEqual(forced.id,first.id);
+const lines=forced.lines.map(l=>({dishId:l.dishId,quantity:l.suggested??100,reason:l.suggested===null?"试供量，仅本地接口验证":""}));await call("/api/preferences",{source:"demo",action:"confirm",forecastId:forced.id,date:forced.targetDate,lines},400);
+lines[0].quantity+=10;await call("/api/preferences",{action:"confirm",forecastId:forced.id,date:forced.targetDate,lines},400);lines[0].reason="仅本地接口验证";await call("/api/preferences",{action:"confirm",forecastId:forced.id,date:forced.targetDate,lines});
+const execution={action:"execution",date:forced.targetDate,dishId:lines[0].dishId,prepared:lines[0].quantity,added:100,kitchenRetained:0,ageWaste:0,closingWaste:0,otherWaste:0,note:"仅本地接口验证"};await call("/api/preferences",execution);await call("/api/preferences",{...execution,kitchenRetained:1e8},400);
+await call("/api/preferences",{action:"batch",batch:{}},400);await call("/api/preferences",{action:"daily",store:{},day:{}},400);
+await call("/api/preferences",{action:"backtest"},400);
+const after=await call("/api/preferences?asOf=2026-10-02T23:59:59%2B08:00");assert(after.forecasts.some(f=>f.id===first.id)&&after.forecasts.some(f=>f.id===forced.id));assert(after.plans.some(p=>p.forecastId===forced.id&&p.lines[0].reason==="仅本地接口验证"));assert.equal(after.forecasts.find(f=>f.id===first.id).lines[0].suggested,first.lines[0].suggested);
+const exported=await fetch(`${base}/api/preferences/export?id=${forced.id}`);assert.equal(exported.status,200);const csv=await exported.text();assert(csv.includes("仅本地接口验证")&&csv.includes('"g"'));
+const unauthorized=await fetch(base+"/api/preferences/jobs",{method:"POST",headers:{Authorization:"Bearer invalid"}});assert.equal(unauthorized.status,401);
+console.log(JSON.stringify({success:true,checks:20,model:"weighted-ridge-log1p-grams-v2"},null,2));

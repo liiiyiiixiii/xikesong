@@ -1,0 +1,7 @@
+import { env } from "cloudflare:workers";
+import type { Source } from "./types.ts";
+function db() { if (!env.DB) throw new Error("数据库未连接"); return env.DB; }
+async function hash(token: string) { const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(token)); return [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2, "0")).join(""); }
+export async function createCredential(source: Source) { const bytes = crypto.getRandomValues(new Uint8Array(32)), token = `scale_${[...bytes].map(b => b.toString(16).padStart(2, "0")).join("")}`; await db().prepare("INSERT INTO scale_credentials(source,token_hash,created_at) VALUES (?,?,?) ON CONFLICT(source) DO UPDATE SET token_hash=excluded.token_hash,created_at=excluded.created_at").bind(source, await hash(token), new Date().toISOString()).run(); return { source, token }; }
+export async function credentialConfigured(source: Source) { return !!await db().prepare("SELECT source FROM scale_credentials WHERE source=?").bind(source).first(); }
+export async function authenticate(req: Request): Promise<Source | null> { const header = req.headers.get("authorization"); if (!header?.startsWith("Bearer ") || header.length > 200) return null; const row = await db().prepare("SELECT source FROM scale_credentials WHERE token_hash=?").bind(await hash(header.slice(7))).first<{ source: Source }>(); return row?.source === "live" ? "live" : null; }

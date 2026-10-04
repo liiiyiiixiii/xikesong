@@ -1,0 +1,4 @@
+import BrandLogo from "@/components/scales/brand-logo";
+import Link from "next/link";
+import { CookingPot, Gauge, ArrowRight } from "lucide-react";
+export default function Home(){return <main className="scale-entry"><div className="scale-entry-brand"><BrandLogo/><span>红考拉</span></div><p className="scale-eyebrow">称重驱动的菜品管理</p><h1>知道余量，<br/>掌握供菜节奏。</h1><p className="entry-intro">每一碗的重量变化，连接厨房供应与饮食偏好。</p><div className="scale-entry-grid"><Link href="/admin" className="scale-entry-card"><Gauge size={28}/><h2>管理端</h2><p>查看实时取用，调整明日备料。</p><span>进入管理端 <ArrowRight size={18}/></span></Link><Link href="/kitchen" className="scale-entry-card kitchen-entry"><CookingPot size={28}/><h2>厨房端</h2><p>全屏轮播各菜余量，及时补充。</p><span>打开厨房屏幕 <ArrowRight size={18}/></span></Link></div><small className="entry-note">在管理端配置设备，接入后即可查看菜品余量。</small></main>;}

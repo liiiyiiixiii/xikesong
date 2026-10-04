@@ -1,23 +1,17 @@
 {
-  "name": "red-koala-public-foundation",
-  "version": "0.1.0",
+  "name": "zhishan-tianggong",
+  "version": "1.0.0",
   "private": true,
-  "type": "module",
+  "license": "UNLICENSED",
   "engines": {
     "node": ">=24"
   },
   "scripts": {
-    "test": "node --test tests/*.test.ts",
-    "typecheck": "tsc --noEmit",
-    "demo": "node examples/demo.ts",
-    "check:public": "node scripts/check-public.mjs",
-    "check": "npm run typecheck && npm test && npm run check:public"
-  },
-  "dependencies": {
-    "zod": "3.25.76"
-  },
-  "devDependencies": {
-    "@types/node": "22.19.19",
-    "typescript": "5.9.3"
+    "install:all": "npm ci --prefix red-koala && npm ci --prefix sample-provider",
+    "dev": "npm run dev --prefix red-koala",
+    "build": "npm run build --prefix red-koala",
+    "test": "npm test --prefix red-koala && npm test --prefix sample-provider",
+    "typecheck": "npm run demo:generate --prefix red-koala && npm run typecheck --prefix red-koala",
+    "check:release": "node scripts/check-release.mjs"
   }
 }

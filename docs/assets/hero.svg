@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="480" viewBox="0 0 1440 480" role="img" aria-labelledby="title desc">
+<title id="title">知膳 · 天工</title><desc id="desc">森林绿和米白的产品功能概览，展示称重感知、实时看板、厨房协同与经营分析。</desc>
+<rect width="1440" height="480" rx="28" fill="#f3f6ef"/>
+<path d="M960 0h480v480H760Z" fill="#e4eee5"/>
+<g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+<text x="64" y="72" font-size="18" letter-spacing="4" fill="#57816b">TIANGONG / ZHISHAN</text>
+<text x="60" y="165" font-size="78" font-weight="600" fill="#225e49">知膳</text>
+<text x="66" y="220" font-size="26" fill="#355648">看见取用，理解需求，协同供餐。</text>
+<text x="66" y="272" font-size="18" fill="#708779">旋转小火锅 · 餐饮数据处理与智能经营分析</text>
+<rect x="64" y="345" width="210" height="50" rx="25" fill="#23775a"/>
+<text x="169" y="377" text-anchor="middle" font-size="17" fill="white">从每一盘，到每一天</text>
+<g transform="translate(818 80)">
+<rect width="540" height="310" rx="22" fill="white" stroke="#d4e2d7"/>
+<circle cx="28" cy="30" r="6" fill="#23775a"/><text x="46" y="37" font-size="18" fill="#355648">供餐决策闭环</text>
+<path d="M42 60h456" stroke="#e5ece6"/>
+<g fill="#eff5ef"><rect x="24" y="84" width="232" height="90" rx="12"/><rect x="272" y="84" width="244" height="90" rx="12"/><rect x="24" y="190" width="232" height="90" rx="12"/><rect x="272" y="190" width="244" height="90" rx="12"/></g>
+<g fill="#23775a" font-size="22"><text x="44" y="121">01  称重感知</text><text x="292" y="121">02  实时看板</text><text x="44" y="227">03  厨房协同</text><text x="292" y="227">04  经营分析</text></g>
+<g fill="#708779" font-size="15"><text x="44" y="152">采样 · 校验 · 事件</text><text x="292" y="152">余量 · 缺测 · 异常</text><text x="44" y="258">碗位 · 补充 · 留存</text><text x="292" y="258">画像 · 预测 · 证据</text></g>
+</g></g></svg>

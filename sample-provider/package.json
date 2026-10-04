@@ -1,0 +1,27 @@
+{
+  "name": "red-koala-sample-provider",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "start": "node scripts/start-demo.mjs",
+    "scenario": "node scripts/scenario.mjs",
+    "history": "node scripts/import-unified-history.mjs output/unified-36x42-20260903-20261005-v4 check",
+    "test": "node --test tests/*.test.mjs",
+    "simulate": "node scripts/simulate-session.mjs",
+    "history:generate": "node scripts/generate-history.mjs",
+    "history:check": "node scripts/import-unified-history.mjs output/unified-36x42-20260903-20261005-v4 check",
+    "history:import": "node scripts/import-unified-history.mjs output/unified-36x42-20260903-20261005-v4 import",
+    "history:v1": "node --experimental-strip-types scripts/import-history.mjs",
+    "history:verify": "node scripts/verify-unified-history.mjs output/unified-36x42-20260903-20261005-v4",
+    "history:report": "node scripts/history-report.mjs output/unified-36x42-20260903-20261005-v4"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  },
+  "license": "UNLICENSED"
+}

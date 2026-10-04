@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS `scale_minutes_source_minute` ON `scale_minutes` (`source`,`minute`);

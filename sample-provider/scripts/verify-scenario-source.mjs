@@ -1,0 +1,9 @@
+import assert from 'node:assert/strict';import {readFileSync,writeFileSync} from 'node:fs';import {base,post} from '../lib/client.mjs';
+const root=new URL('../output/unified-36x42-20260903-20261005-v4/',import.meta.url),manifest=JSON.parse(readFileSync(new URL('manifest.json',root)));
+const state=await(await fetch(base+'/api/scales/state')).json();assert.equal(state.scenario.datasetId,manifest.datasetId);const day=state.at.slice(0,10),minute=new Date(Math.floor(Date.parse(state.at)/60000)*60000).toISOString();
+const last=Array.from({length:36},(_,i)=>JSON.parse(JSON.parse(readFileSync(new URL(`batches/${String(manifest.expectedBatches-35+i).padStart(4,'0')}.json`,root))).payload));assert(last.every(b=>b.daily.date===day));
+for(const scale of state.dishes.flatMap(d=>d.scales)){const b=last.find(b=>b.daily.dishId===scale.dishId),m=b.minutes.find(m=>m.scaleId===scale.id&&m.minute===minute);assert(m);assert.equal(scale.netG,m.observedSeconds?m.remainingG:null);}
+await assert.rejects(post('/api/preferences/history',{enabled:true}),/只读回放/);
+await assert.rejects(post('/api/scales/ingest',{samples:[{scaleId:'sim-1',bootId:'reject-independent-source',sequence:1,sampledAt:new Date().toISOString(),grossG:800}]}),e=>e.status===409);
+const current=await(await fetch(base+'/api/preferences')).json();assert.equal(current.days.length,1188);assert.equal(current.dates[0],'2026-09-03');assert.equal(current.dates.at(-1),'2026-10-05');assert.equal(current.history.manifest.datasetId,manifest.datasetId);
+writeFileSync(new URL('source-verification.json',root),JSON.stringify({passed:true,datasetId:manifest.datasetId,replayAt:state.at,scalesMatched:42,days:33,dishDays:1188,independentWritesRejected:true},null,2));console.log('All 42 displayed weights match dataset minute records; independent writes rejected.');

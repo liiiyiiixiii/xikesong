@@ -1,0 +1,13 @@
+dish_id,name,category,unit,synthetic_piece_weight_g,launch_date
+beef,精选肥牛,肉类,g,NA,2026-07-05
+shrimp,鲜虾,水产,件,25,2026-07-05
+potato,土豆片,蔬菜,g,NA,2026-07-05
+tofu,嫩豆腐,豆制品,g,NA,2026-07-05
+mushroom,金针菇,菌菇,g,NA,2026-07-05
+lettuce,生菜,蔬菜,g,NA,2026-07-05
+meatball,牛肉丸,肉类,件,20,2026-07-05
+kelp,海带结,水产,g,NA,2026-07-05
+lotus,莲藕片,蔬菜,g,NA,2026-07-05
+watermelon,西瓜,水果,件,80,2026-07-05
+bun,小馒头,主食,件,30,2026-07-05
+noodle,鲜面条,主食,g,NA,2026-08-04

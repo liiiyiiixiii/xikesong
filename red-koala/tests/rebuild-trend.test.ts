@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { rebuildTrend } from '../lib/analysis/rebuild-trend.ts';
+import { shiftDate,type Dataset,type DishDay } from '../lib/preferences/types.ts';
+function dataset():Dataset{const dates=Array.from({length:35},(_,i)=>shiftDate('2026-09-01',i));return {catalog:['a','b'].map(id=>({id,name:'同名菜',category:'',unit:'g',pieceWeightG:null,launchDate:'2026-09-01'})),stores:dates.map(date=>({date,status:'open',snapshotAt:date+'T20:00:00+08:00',finalAt:date+'T23:00:00+08:00'})),days:dates.flatMap(date=>['a','b'].map(dishId=>({date,dishId,status:'complete',supply:'adequate',stockoutMinutes:0,takeFinal:dishId==='a'&&date>'2026-09-25'?200:100,finalAt:date+'T23:00:00+08:00'} as DishDay)))};}
+test('history is computed on demand without requiring snapshots',()=>{const rows=rebuildTrend(dataset(),[],'2026-10-04',7,'2026-10-04T12:00:00+08:00');assert.equal(rows.length,7);assert(rows.every(r=>r.origin==='reconstructed'&&r.dishes.every(d=>d.share!==null)));assert.equal(rows[0].dishes.length,2);});
+test('saved snapshots win and future data cannot leak into reconstructed history',()=>{const d=dataset(),now='2026-10-04T12:00:00+08:00',before=rebuildTrend(d,[],'2026-10-04',7,now);d.days=d.days.map(r=>r.date>='2026-10-04'?{...r,takeFinal:999999}:r);assert.deepEqual(rebuildTrend(d,[],'2026-10-04',7,now),before);const saved={...before[0],origin:'saved' as const,dishes:[]};assert.deepEqual(rebuildTrend(d,[saved],'2026-10-04',7,now)[0],saved);});
