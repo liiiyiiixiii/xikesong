@@ -1,0 +1,30 @@
+{
+  "name": "@zhishan/restaurant-3d",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4173 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "scene:generate": "tsx scripts/generate-scene.ts",
+    "plates:fill": "tsx scripts/fill-plates.ts"
+  },
+  "dependencies": {
+    "three": "0.180.0",
+    "@zhishan/contracts": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/three": "0.180.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.6",
+    "tsx": "4.23.15",
+    "@types/node": "24.19.1"
+  },
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-11T18:00:05.875Z",
+  "sceneDigest": "sha256:92566c04c5bf13f73d81c888563bd2c9311e67a823b0aff8a42c20674c1cd6d2",
+  "results": [
+    {
+      "base": "http://127.0.0.1:4173",
+      "status": 200,
+      "matched": true,
+      "contractVersion": "1.0.0",
+      "datasetId": "demo-dbddba6574bd3093ddc3",
+      "sessionId": "514d8065-2d4c-4d51-8338-e0d770650445",
+      "generation": 0,
+      "simTimeMs": 15765,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "base": "http://127.0.0.1:5173",
+      "status": 200,
+      "matched": true,
+      "contractVersion": "1.0.0",
+      "datasetId": "demo-dbddba6574bd3093ddc3",
+      "sessionId": "514d8065-2d4c-4d51-8338-e0d770650445",
+      "generation": 0,
+      "simTimeMs": 16314,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    }
+  ],
+  "passed": true
+}

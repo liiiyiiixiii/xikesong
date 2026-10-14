@@ -1,0 +1,901 @@
+{
+  "startedAt": "2026-10-11T17:45:42.139Z",
+  "base": "http://127.0.0.1:5173/api/demo/v1",
+  "sceneDigest": "sha256:92566c04c5bf13f73d81c888563bd2c9311e67a823b0aff8a42c20674c1cd6d2",
+  "source": "actual-main-system-http",
+  "checkpoints": [
+    {
+      "simTimeMs": 48,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 0,
+        "sceneCustomerEntityCount": 0,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 1244,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 1,
+        "sceneCustomerEntityCount": 1,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 2155,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 13089,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 1,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 14229,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 37728,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 520,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [
+        {
+          "taskId": "task:weight:plate-main-001:2",
+          "status": "preparing"
+        }
+      ],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 57392,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [
+        {
+          "taskId": "task:weight:plate-main-001:2",
+          "status": "waiting"
+        }
+      ],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 177153,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [
+        {
+          "taskId": "task:weight:plate-main-001:2",
+          "status": "completed"
+        }
+      ],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 184192,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 1,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [
+        {
+          "taskId": "task:weight:plate-main-001:2",
+          "status": "completed"
+        }
+      ],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 185098,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [
+        {
+          "taskId": "task:weight:plate-main-001:2",
+          "status": "completed"
+        }
+      ],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 196868,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 0,
+        "sceneCustomerEntityCount": 0,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [
+        {
+          "taskId": "task:weight:plate-main-001:2",
+          "status": "completed"
+        }
+      ],
+      "playback": "running"
+    },
+    {
+      "simTimeMs": 201664,
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 0,
+        "sceneCustomerEntityCount": 0,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "tasks": [
+        {
+          "taskId": "task:weight:plate-main-001:2",
+          "status": "completed"
+        }
+      ],
+      "playback": "completed"
+    }
+  ],
+  "pause": true,
+  "restart": true,
+  "finalState": {
+    "contractVersion": "1.0.0",
+    "datasetId": "demo-dbddba6574bd3093ddc3",
+    "layoutVersion": "hongkaola-confirmed-65-180-v1",
+    "source": "simulation",
+    "sessionId": "ea7e1e14-d19e-4e6c-bd13-07e3514b751d",
+    "generation": 4,
+    "revision": 278,
+    "simTimeMs": 201664,
+    "sceneDigest": "sha256:92566c04c5bf13f73d81c888563bd2c9311e67a823b0aff8a42c20674c1cd6d2",
+    "playback": {
+      "status": "completed",
+      "durationMs": 201664
+    },
+    "plates": [
+      {
+        "plateId": "plate-main-001",
+        "slotId": "track-main-slot-001",
+        "dishId": "beef-slices",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 5.994531000000009,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-002",
+        "slotId": "track-main-slot-004",
+        "dishId": "pork-belly",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 8.110360000000014,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-003",
+        "slotId": "track-main-slot-007",
+        "dishId": "chicken-thigh",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 10.226190000000003,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-004",
+        "slotId": "track-main-slot-011",
+        "dishId": "shrimp",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 13.047296000000003,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-005",
+        "slotId": "track-main-slot-014",
+        "dishId": "squid",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 15.163125000000008,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-006",
+        "slotId": "track-main-slot-018",
+        "dishId": "mushroom",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 17.98423100000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-007",
+        "slotId": "track-main-slot-021",
+        "dishId": "potato",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 20.10006100000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-008",
+        "slotId": "track-main-slot-025",
+        "dishId": "corn",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 22.92116700000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-009",
+        "slotId": "track-main-slot-028",
+        "dishId": "beef-slices",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 25.036996000000016,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-010",
+        "slotId": "track-main-slot-032",
+        "dishId": "pork-belly",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 27.858102000000002,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-011",
+        "slotId": "track-main-slot-035",
+        "dishId": "chicken-thigh",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 29.973932000000005,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-012",
+        "slotId": "track-main-slot-039",
+        "dishId": "shrimp",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 32.795038000000005,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-013",
+        "slotId": "track-main-slot-042",
+        "dishId": "squid",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 34.91086700000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-014",
+        "slotId": "track-main-slot-045",
+        "dishId": "mushroom",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 37.02669700000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-015",
+        "slotId": "track-main-slot-049",
+        "dishId": "potato",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 39.847803,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-016",
+        "slotId": "track-main-slot-052",
+        "dishId": "corn",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 41.96363200000002,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-017",
+        "slotId": "track-main-slot-056",
+        "dishId": "beef-slices",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 44.784738000000004,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-018",
+        "slotId": "track-main-slot-059",
+        "dishId": "pork-belly",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 46.90056800000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-019",
+        "slotId": "track-main-slot-063",
+        "dishId": "chicken-thigh",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 49.72167400000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-020",
+        "slotId": "track-main-slot-066",
+        "dishId": "shrimp",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 51.83750300000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-021",
+        "slotId": "track-main-slot-070",
+        "dishId": "squid",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 54.65860900000001,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-022",
+        "slotId": "track-main-slot-073",
+        "dishId": "mushroom",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 56.774439,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-023",
+        "slotId": "track-main-slot-077",
+        "dishId": "potato",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 1.057596000000018,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      },
+      {
+        "plateId": "plate-main-024",
+        "slotId": "track-main-slot-080",
+        "dishId": "corn",
+        "diameterM": 0.32,
+        "heightM": 0.08,
+        "trackId": "track-main",
+        "sM": 3.173425000000009,
+        "remainingG": 1000,
+        "fullG": 1000,
+        "quality": "good",
+        "remainingStatus": "full",
+        "lastObservedSimTimeMs": 200000
+      }
+    ],
+    "customers": [
+      {
+        "customerId": "customer-001",
+        "status": "left",
+        "seatId": null,
+        "enteredAtMs": 1000,
+        "leftAtMs": 195497
+      },
+      {
+        "customerId": "customer-002",
+        "status": "left",
+        "seatId": null,
+        "enteredAtMs": 2000,
+        "leftAtMs": 196664
+      }
+    ],
+    "staff": [
+      {
+        "staffId": "staff-kitchen-01",
+        "name": "厨房员工",
+        "position": {
+          "x": 3.584797,
+          "y": 0,
+          "z": 4.321857
+        },
+        "action": "idle",
+        "taskId": null
+      }
+    ],
+    "tasks": [
+      {
+        "taskId": "task:weight:plate-main-001:2",
+        "plateId": "plate-main-001",
+        "dishId": "beef-slices",
+        "staffId": "staff-kitchen-01",
+        "status": "completed",
+        "createdAtMs": 37188,
+        "preparationStartMs": 37188,
+        "readyAtMs": 52188,
+        "completedAtMs": 175745,
+        "triggerEventId": "weight:plate-main-001:2"
+      }
+    ],
+    "summary": {
+      "carryingPositionCount": 157,
+      "actualPlateCount": 24,
+      "dishTypeCount": 8,
+      "availableSeatCount": 47,
+      "seatedCustomerCount": 0,
+      "inStoreCustomerCount": 0,
+      "sceneCustomerEntityCount": 0,
+      "takenG": 840,
+      "refilledG": 840,
+      "uncertainG": 0,
+      "qualityIssueCount": 0
+    },
+    "eventCursor": "WyJkZW1vLXYxIiwiZWE3ZTFlMTQtZDE5ZS00ZTZjLWJkMTMtMDdlMzUxNGI3NTFkIiw0LDI3MV0=",
+    "activeEvents": [],
+    "dishes": [
+      {
+        "dishId": "beef-slices",
+        "name": "烧烤牛肉",
+        "displayOrder": 10,
+        "fullG": 1000,
+        "tareG": 300
+      },
+      {
+        "dishId": "pork-belly",
+        "name": "五花肉",
+        "displayOrder": 20,
+        "fullG": 1000,
+        "tareG": 300
+      },
+      {
+        "dishId": "chicken-thigh",
+        "name": "鸡腿肉",
+        "displayOrder": 30,
+        "fullG": 1000,
+        "tareG": 300
+      },
+      {
+        "dishId": "shrimp",
+        "name": "鲜虾",
+        "displayOrder": 40,
+        "fullG": 1000,
+        "tareG": 300
+      },
+      {
+        "dishId": "squid",
+        "name": "鱿鱼",
+        "displayOrder": 50,
+        "fullG": 1000,
+        "tareG": 300
+      },
+      {
+        "dishId": "mushroom",
+        "name": "香菇",
+        "displayOrder": 60,
+        "fullG": 1000,
+        "tareG": 300
+      },
+      {
+        "dishId": "potato",
+        "name": "土豆片",
+        "displayOrder": 70,
+        "fullG": 1000,
+        "tareG": 300
+      },
+      {
+        "dishId": "corn",
+        "name": "玉米",
+        "displayOrder": 80,
+        "fullG": 1000,
+        "tareG": 300
+      }
+    ],
+    "rules": {
+      "label": "演示参数，非实测门店标准",
+      "halfRatio": 0.5,
+      "lowRatio": 0.2,
+      "emptyG": 5,
+      "preparationMs": 15000,
+      "actionMs": 1000,
+      "staleAfterMs": 30000,
+      "maxDeltaG": 1200
+    },
+    "reports": {
+      "contractVersion": "1.0.0",
+      "datasetId": "demo-dbddba6574bd3093ddc3",
+      "layoutVersion": "hongkaola-confirmed-65-180-v1",
+      "source": "simulation",
+      "sessionId": "ea7e1e14-d19e-4e6c-bd13-07e3514b751d",
+      "generation": 4,
+      "revision": 278,
+      "simTimeMs": 201664,
+      "current": {
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0
+      },
+      "simulatedDay": {
+        "date": "2026-10-12",
+        "scope": "dataset-once",
+        "datasetId": "demo-dbddba6574bd3093ddc3",
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0
+      },
+      "byDish": [
+        {
+          "dishId": "beef-slices",
+          "takenG": 840,
+          "refilledG": 840,
+          "uncertainG": 0
+        },
+        {
+          "dishId": "pork-belly",
+          "takenG": 0,
+          "refilledG": 0,
+          "uncertainG": 0
+        },
+        {
+          "dishId": "chicken-thigh",
+          "takenG": 0,
+          "refilledG": 0,
+          "uncertainG": 0
+        },
+        {
+          "dishId": "shrimp",
+          "takenG": 0,
+          "refilledG": 0,
+          "uncertainG": 0
+        },
+        {
+          "dishId": "squid",
+          "takenG": 0,
+          "refilledG": 0,
+          "uncertainG": 0
+        },
+        {
+          "dishId": "mushroom",
+          "takenG": 0,
+          "refilledG": 0,
+          "uncertainG": 0
+        },
+        {
+          "dishId": "potato",
+          "takenG": 0,
+          "refilledG": 0,
+          "uncertainG": 0
+        },
+        {
+          "dishId": "corn",
+          "takenG": 0,
+          "refilledG": 0,
+          "uncertainG": 0
+        }
+      ],
+      "history": {
+        "halfMonth": null,
+        "month": null
+      },
+      "note": "模拟当日累计仅包含本数据包已经发生的事件，按事件计一次，重播保留已发生记录，不预记未来；取用量不等于吃掉重量、人数或营收。"
+    }
+  },
+  "reports": {
+    "contractVersion": "1.0.0",
+    "datasetId": "demo-dbddba6574bd3093ddc3",
+    "layoutVersion": "hongkaola-confirmed-65-180-v1",
+    "source": "simulation",
+    "sessionId": "ea7e1e14-d19e-4e6c-bd13-07e3514b751d",
+    "generation": 4,
+    "revision": 278,
+    "simTimeMs": 201664,
+    "current": {
+      "takenG": 840,
+      "refilledG": 840,
+      "uncertainG": 0
+    },
+    "simulatedDay": {
+      "date": "2026-10-12",
+      "scope": "dataset-once",
+      "datasetId": "demo-dbddba6574bd3093ddc3",
+      "takenG": 840,
+      "refilledG": 840,
+      "uncertainG": 0
+    },
+    "byDish": [
+      {
+        "dishId": "beef-slices",
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0
+      },
+      {
+        "dishId": "pork-belly",
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0
+      },
+      {
+        "dishId": "chicken-thigh",
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0
+      },
+      {
+        "dishId": "shrimp",
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0
+      },
+      {
+        "dishId": "squid",
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0
+      },
+      {
+        "dishId": "mushroom",
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0
+      },
+      {
+        "dishId": "potato",
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0
+      },
+      {
+        "dishId": "corn",
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0
+      }
+    ],
+    "history": {
+      "halfMonth": null,
+      "month": null
+    },
+    "note": "模拟当日累计仅包含本数据包已经发生的事件，按事件计一次，重播保留已发生记录，不预记未来；取用量不等于吃掉重量、人数或营收。"
+  },
+  "refreshAtCompletion": true,
+  "readings": 240,
+  "uniqueEvents": 271,
+  "passed": true,
+  "finishedAt": "2026-10-11T17:49:07.122Z"
+}

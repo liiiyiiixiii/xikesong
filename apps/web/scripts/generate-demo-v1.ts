@@ -1,0 +1,11 @@
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { resolve, relative, sep } from 'node:path';
+import { generateRush } from '../lib/demo-v1/rush-generator.ts';
+import type { Dish } from '@zhishan/contracts/demo-v1';
+const path=resolve(process.argv[2]??'../restaurant-3d/public/data/scene-manifest.v1.json');
+const scene=JSON.parse(readFileSync(path,'utf8'));
+const dishes=JSON.parse(readFileSync('data/demo-v1/dishes.json','utf8')) as Dish[];
+const {dataset,truth,report}=await generateRush(scene,dishes,relative(resolve('../..'),path).split(sep).join('/'));
+mkdirSync('data/demo-v1',{recursive:true});
+for(const [name,value]of Object.entries({'scene-manifest.v1':scene,dataset,'validation-truth':truth,'validation-report':report}))writeFileSync(`data/demo-v1/${name}.json`,JSON.stringify(value,null,2)+'\n');
+console.log(JSON.stringify(report,null,2));

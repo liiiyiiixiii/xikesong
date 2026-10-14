@@ -1,0 +1,10 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {buildGeometry,distance,type SceneManifest} from '../src/demo/layout';
+import {validateGeometry} from '../src/demo/validation';
+const scene=JSON.parse(readFileSync('public/data/scene-manifest.v1.json','utf8')) as SceneManifest;
+const alternate=buildGeometry({seatPitchM:1.4,plateGapM:.55});alternate.dishCatalog=scene.dishCatalog;alternate.plates=scene.plates.slice(0,12).map((p,i)=>({...p,slotId:alternate.slots[i*2].slotId}));
+const baseline=JSON.parse(readFileSync('tests/fixtures/seating-v1-baseline.json','utf8')) as {seats:SceneManifest['seats']};
+const added=scene.seats.filter(s=>!baseline.seats.some(old=>old.seatId===s.seatId));
+const moved=scene.seats.filter(s=>{const old=baseline.seats.find(old=>old.seatId===s.seatId);return old&&distance(old.position,s.position)>1e-6;});
+const report={sceneDigest:scene.contentDigest,generatedAt:new Date().toISOString(),default:validateGeometry(scene),alternate:validateGeometry(alternate),seatsByTrack:Object.fromEntries(scene.tracks.map(t=>[t.trackId,scene.seats.filter(s=>s.trackId===t.trackId).length])),seatsByZone:Object.fromEntries([...new Set(scene.seats.map(s=>s.zoneId))].map(zone=>[zone,scene.seats.filter(s=>s.zoneId===zone).length])),seatingChanges:{before:baseline.seats.length,after:scene.seats.length,added:added.map(({seatId,zoneId,position})=>({seatId,zoneId,position})),moved:moved.map(({seatId,zoneId,position})=>({seatId,zoneId,position})),removed:baseline.seats.filter(s=>!scene.seats.some(next=>next.seatId===s.seatId)).map(s=>s.seatId)},staffPositions:scene.servingWindows.map(w=>({windowId:w.windowId,position:w.staffPosition}))};
+writeFileSync('docs/demo-v1/geometry-validation.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(report.default.errors.length||report.alternate.errors.length)process.exitCode=1;

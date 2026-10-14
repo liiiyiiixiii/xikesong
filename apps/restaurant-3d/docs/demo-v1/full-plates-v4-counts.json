@@ -1,0 +1,21 @@
+{
+  "layoutVersion": "hongkaola-confirmed-65-180-v4",
+  "sceneDigest": "sha256:c484d93002a744daf1991e2157a10ed82edd6110d6925c4378903b78c7e0f3d6",
+  "seatsUnchangedFromV3": true,
+  "tracksUnchangedFromV3": true,
+  "actualPlateCount": 174,
+  "byTrack": [
+    {
+      "trackId": "track-main",
+      "actualPlates": 96,
+      "usableSlots": 96,
+      "centrePitchM": 0.6535203020833333
+    },
+    {
+      "trackId": "track-backup",
+      "actualPlates": 78,
+      "usableSlots": 78,
+      "centrePitchM": 0.6551016025641025
+    }
+  ]
+}

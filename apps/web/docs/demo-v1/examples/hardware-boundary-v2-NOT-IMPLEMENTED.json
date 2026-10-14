@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "batchId": "44444444-4444-4444-8444-444444444444",
+  "events": [
+    {
+      "eventId": "55555555-5555-4555-8555-555555555555",
+      "scaleId": "example-scale",
+      "bootId": "example-boot",
+      "eventSequence": 1,
+      "occurredAt": "2026-10-12T09:00:00+08:00",
+      "type": "enter_kitchen",
+      "sampleRef": {
+        "bootId": "example-boot",
+        "sequence": 1
+      }
+    }
+  ]
+}

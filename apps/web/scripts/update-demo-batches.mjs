@@ -1,0 +1,15 @@
+import {readFile,writeFile,copyFile} from 'node:fs/promises';
+import {initialServingBatches} from '../lib/demo-v1/freshness.ts';
+import {digest,validatePackage} from '../lib/demo-v1/core.ts';
+const file=new URL('../data/demo-v1/dataset.json',import.meta.url);
+const scene=JSON.parse(await readFile(new URL('../data/demo-v1/scene-manifest.v1.json',import.meta.url),'utf8'));
+const dataset=JSON.parse(await readFile(file,'utf8'));
+if(dataset.servingBatches)throw Error('数据包已有逐盘批次，停止以避免覆盖。');
+dataset.servingBatches=initialServingBatches(scene);
+delete dataset.rules.displayWarnAfterMs;delete dataset.rules.displayExpireAfterMs;
+dataset.provenance.generatorVersion+='-per-plate-batches-v1';
+dataset.datasetId=`lunch-${(await digest({...dataset,datasetId:''})).slice(7,27)}`;
+await validatePackage(scene,dataset);
+await copyFile(file,new URL('../data/demo-v1/dataset.before-batches.json',import.meta.url),1);
+await writeFile(file,JSON.stringify(dataset,null,2)+'\n');
+console.log(`已登记 ${dataset.servingBatches.length} 个仿真开餐批次；重量、取用、补菜事件保持原样。`);

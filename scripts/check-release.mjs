@@ -1,29 +1,30 @@
-import { readFile, readdir, lstat } from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-const root = fileURLToPath(new URL("../", import.meta.url));
-const allowed = new Set(JSON.parse(await readFile(path.join(root, "PUBLIC_FILES.json"), "utf8")));
-const excluded = new Set([".git", ".demo-state", "node_modules", ".next", ".vinext", ".wrangler", ".sites-runtime", ".agents", ".codex", "dist", "output", "outputs", "backups", "coverage", "tmp"]);
-const issues = [], seen = new Set();
-async function walk(relative = "") {
- for (const name of await readdir(path.join(root, relative))) {
-  const file = relative ? `${relative}/${name}` : name;
-  if (excluded.has(name) || file === "red-koala/data" || file === "sample-provider/data" || name === ".DS_Store" || name.endsWith(".tsbuildinfo")) continue;
-  if (name.startsWith(".env") && name !== ".env.example") continue;
-  const full = path.join(root, file), info = await lstat(full);
-  if (info.isSymbolicLink()) { issues.push(`Symlink: ${file}`); continue; }
-  if (info.isDirectory()) { await walk(file); continue; }
-  seen.add(file);
-  if (!allowed.has(file)) issues.push(`Not allowlisted: ${file}`);
-  if (info.size > 50 * 1024 * 1024) issues.push(`Oversized: ${file}`);
-  const content = await readFile(full, "utf8");
-  if ([/-----BEGIN [A-Z ]*PRIVATE KEY-----/, /\bsk-[A-Za-z0-9_-]{20,}/, /\bgh[pousr]_[A-Za-z0-9]{20,}/, /\bAKIA[A-Z0-9]{16}\b/].some(p => p.test(content))) issues.push(`Possible secret: ${file}`);
+import { readdirSync, readFileSync, lstatSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+import { root } from './workspace-runtime.mjs';
+const excluded=new Set(['.git','node_modules','dist','.next','.vinext','.wrangler','.sites-runtime','.agents','.codex','.demo-state','.business-state','.local-run','output','outputs','backups','coverage','tmp']);
+const dataRoots=new Set(['apps/web/data','tools/sample-provider/data']);
+const issues=[],files=[];
+function walk(dir='') {
+ for(const name of readdirSync(path.join(root,dir))) {
+  const relative=dir?`${dir}/${name}`:name;
+  if(excluded.has(name)||dataRoots.has(relative)||name==='.DS_Store'||name.endsWith('.tsbuildinfo'))continue;
+  const full=path.join(root,relative),info=lstatSync(full);
+  if(info.isSymbolicLink()){issues.push(`Symlink: ${relative}`);continue;}
+  if(info.isDirectory()){walk(relative);continue;}
+  if(/^\.env(?:\.|$)/.test(name)&&name!=='.env.example'){issues.push(`Private environment file: ${relative}`);continue;}
+  files.push(relative);
+  if(/\.(?:tgz|tar|gz|bak)$/.test(name)||(/\.zip$/.test(name)&&!relative.startsWith('datasets/')))issues.push(`Unexpected archive or backup: ${relative}`);
+  if(info.size>50*1024*1024)issues.push(`Oversized file: ${relative}`);
+  if(/\.(?:db|sqlite|pem|key)(?:-|$)/.test(name))issues.push(`Private runtime file: ${relative}`);
+  if(/\.(?:png|jpe?g|gif|webp|zip|mp4|webm|pdf|woff2?)$/i.test(name))continue;
+  const content=readFileSync(full,'utf8');
+  if([/-----BEGIN [A-Z ]*PRIVATE KEY-----/,/\bsk-[A-Za-z0-9_-]{20,}/,/\bgh[pousr]_[A-Za-z0-9]{20,}/,/\bAKIA[A-Z0-9]{16}\b/].some(re=>re.test(content)))issues.push(`Possible secret: ${relative}`);
+  if(/\/Users\/[^/]+\//.test(content))issues.push(`Author machine path: ${relative}`);
  }
 }
-await walk();
-for (const file of allowed) {
- if (!seen.has(file)) issues.push(`Missing or forbidden allowlist entry: ${file}`);
- if (file.split("/").some(p => excluded.has(p)) || /(?:^|\/)\.env(?!\.example$)/.test(file) || /\.(?:db|sqlite|pem|key)(?:-|$)/.test(file)) issues.push(`Forbidden file: ${file}`);
-}
-if (issues.length) { console.error(issues.join("\n")); process.exitCode = 1; }
-else console.log(`Release boundary passed: ${allowed.size} source/documentation/assets files. Secret scan is heuristic; runtime files are excluded.`);
+walk();files.sort();
+if(process.argv.includes('--write-manifest'))writeFileSync(path.join(root,'PUBLIC_FILES.json'),JSON.stringify(files,null,2)+'\n');
+const allowed=new Set(JSON.parse(readFileSync(path.join(root,'PUBLIC_FILES.json'),'utf8')));
+for(const file of files)if(!allowed.has(file))issues.push(`Not in release manifest: ${file}`);
+for(const file of allowed)if(!files.includes(file))issues.push(`Missing manifest file: ${file}`);
+if(issues.length){console.error(issues.join('\n'));process.exitCode=1;}else console.log(`Release inventory passed: ${files.length} files. Secret patterns are heuristic; dataset contents are checked separately.`);

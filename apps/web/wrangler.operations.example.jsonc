@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "red-koala-operations-test",
+  "main": "build/operations-worker.ts",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": { "OPS_V2_ENVIRONMENT": "test" },
+  "d1_databases": [{
+    "binding": "OPS_DB",
+    "database_name": "red-koala-operations-test",
+    // Replace with an independently provisioned database ID before deployment.
+    "database_id": "00000000-0000-4000-8000-000000000002"
+  }],
+  "triggers": { "crons": ["* * * * *"] }
+}

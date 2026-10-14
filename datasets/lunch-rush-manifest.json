@@ -1,0 +1,42 @@
+{
+  "datasetId": "lunch-2dacf9f6ca1b0418a356",
+  "archive": "lunch-rush-v6.zip",
+  "sha256": "75c87b84578fd7d0e79f157c6dd351e59dc7a0c2066dc0f7e42e078cb9a7f876",
+  "files": [
+    {
+      "path": "demo-v1/dataset.before-batches.json",
+      "bytes": 3203096,
+      "sha256": "6cf95ac49d2a266976629acbd3075d0a8fe2cfc704ef5356fc533942413b2991"
+    },
+    {
+      "path": "demo-v1/dataset.json",
+      "bytes": 3226875,
+      "sha256": "4075a69d314cafe6ff57edbe8d7fe802d9d605298e6f59b936c54b7abd7432d3"
+    },
+    {
+      "path": "demo-v1/dishes.json",
+      "bytes": 28203,
+      "sha256": "a3be64bab84b0d2e031bf1479e153325cf9612b6dd0cb7fbe85a238cc85effd8"
+    },
+    {
+      "path": "demo-v1/rules.json",
+      "bytes": 260,
+      "sha256": "3a67b84e7f203cc781ab32e3fb00f4c49e0c8e771f6b7aeddae02999796f76e3"
+    },
+    {
+      "path": "demo-v1/scene-manifest.v1.json",
+      "bytes": 1383231,
+      "sha256": "c84ae2ee91fc4e494fb23189a09cac33843e807c06ed48c2763569f7f384a33c"
+    },
+    {
+      "path": "demo-v1/validation-report.json",
+      "bytes": 3377,
+      "sha256": "ea5e537e6e13949e1cdd4ab806efbe9970fac2d108dca40ed4f4fefdf4c0eff6"
+    },
+    {
+      "path": "demo-v1/validation-truth.json",
+      "bytes": 41322,
+      "sha256": "62066cd6606c3c1dab401028c6494bb4b0a20456d1fcdf9a227a0d193f9aa202"
+    }
+  ]
+}

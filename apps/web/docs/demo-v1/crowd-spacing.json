@@ -1,0 +1,13 @@
+{
+  "datasetId": "demo-9074cc30b3b4f4272e01",
+  "peak": 24,
+  "samplingMs": 200,
+  "closest": {
+    "distanceM": 0.5714804973166613,
+    "timeMs": 220800,
+    "ids": [
+      "customer-013",
+      "customer-014"
+    ]
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "source": "main-system:data/demo-v1/dishes.json; demo placement, 3 plates per dish; configurable, not a runtime limit",
+  "dishCatalog": [
+    {
+      "dishId": "beef-slices",
+      "name": "烧烤牛肉",
+      "displayOrder": 10,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "pork-belly",
+      "name": "五花肉",
+      "displayOrder": 20,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "chicken-thigh",
+      "name": "鸡腿肉",
+      "displayOrder": 30,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "shrimp",
+      "name": "鲜虾",
+      "displayOrder": 40,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "squid",
+      "name": "鱿鱼",
+      "displayOrder": 50,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "mushroom",
+      "name": "香菇",
+      "displayOrder": 60,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "potato",
+      "name": "土豆片",
+      "displayOrder": 70,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "corn",
+      "name": "玉米",
+      "displayOrder": 80,
+      "fullG": 1000,
+      "tareG": 300
+    }
+  ],
+  "plates": [
+    {
+      "plateId": "plate-main-001",
+      "slotId": "track-main-slot-001",
+      "dishId": "beef-slices",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-002",
+      "slotId": "track-main-slot-004",
+      "dishId": "pork-belly",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-003",
+      "slotId": "track-main-slot-007",
+      "dishId": "chicken-thigh",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-004",
+      "slotId": "track-main-slot-011",
+      "dishId": "shrimp",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-005",
+      "slotId": "track-main-slot-014",
+      "dishId": "squid",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-006",
+      "slotId": "track-main-slot-018",
+      "dishId": "mushroom",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-007",
+      "slotId": "track-main-slot-021",
+      "dishId": "potato",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-008",
+      "slotId": "track-main-slot-025",
+      "dishId": "corn",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-009",
+      "slotId": "track-main-slot-028",
+      "dishId": "beef-slices",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-010",
+      "slotId": "track-main-slot-032",
+      "dishId": "pork-belly",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-011",
+      "slotId": "track-main-slot-035",
+      "dishId": "chicken-thigh",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-012",
+      "slotId": "track-main-slot-039",
+      "dishId": "shrimp",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-013",
+      "slotId": "track-main-slot-042",
+      "dishId": "squid",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-014",
+      "slotId": "track-main-slot-045",
+      "dishId": "mushroom",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-015",
+      "slotId": "track-main-slot-049",
+      "dishId": "potato",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-016",
+      "slotId": "track-main-slot-052",
+      "dishId": "corn",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-017",
+      "slotId": "track-main-slot-056",
+      "dishId": "beef-slices",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-018",
+      "slotId": "track-main-slot-059",
+      "dishId": "pork-belly",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-019",
+      "slotId": "track-main-slot-063",
+      "dishId": "chicken-thigh",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-020",
+      "slotId": "track-main-slot-066",
+      "dishId": "shrimp",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-021",
+      "slotId": "track-main-slot-070",
+      "dishId": "squid",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-022",
+      "slotId": "track-main-slot-073",
+      "dishId": "mushroom",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-023",
+      "slotId": "track-main-slot-077",
+      "dishId": "potato",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-024",
+      "slotId": "track-main-slot-080",
+      "dishId": "corn",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    }
+  ]
+}

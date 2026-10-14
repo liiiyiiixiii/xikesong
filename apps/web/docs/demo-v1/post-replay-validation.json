@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "method": "只读观察协调验收重播后的同会话状态，未发送控制",
+  "datasetId": "demo-dbddba6574bd3093ddc3",
+  "sessionId": "514d8065-2d4c-4d51-8338-e0d770650445",
+  "generation": 2,
+  "simTimeMs": 3246,
+  "playback": {
+    "status": "paused",
+    "durationMs": 201664
+  },
+  "current": {
+    "takenG": 0,
+    "refilledG": 0,
+    "uncertainG": 0
+  },
+  "simulatedDay": {
+    "date": "2026-10-12",
+    "scope": "dataset-once",
+    "datasetId": "demo-dbddba6574bd3093ddc3",
+    "takenG": 840,
+    "refilledG": 840,
+    "uncertainG": 0
+  },
+  "at": "2026-10-11T18:06:26.659Z"
+}

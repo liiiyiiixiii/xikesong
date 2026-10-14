@@ -1,0 +1,12 @@
+{
+  "error": {
+    "code": "SPATIAL_INVALID",
+    "message": "取菜时餐盘不在座位可达窗口",
+    "details": {
+      "eventId": "take:1",
+      "targetEntityId": "example-plate",
+      "simTimeMs": 12345
+    },
+    "requestId": "33333333-3333-4333-8333-333333333333"
+  }
+}

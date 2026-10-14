@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-10-12T03:20:28.371Z",
+  "sceneDigest": "sha256:448ff71450d5ddac8e325612e266846feb3e8e7717516178688ad401e74a2f59",
+  "layoutVersion": "hongkaola-confirmed-65-180-v2",
+  "candidate": {
+    "mode": "official-generator-in-memory-only",
+    "published": false,
+    "report": {
+      "layoutVersion": "hongkaola-confirmed-65-180-v2",
+      "sceneDigest": "sha256:448ff71450d5ddac8e325612e266846feb3e8e7717516178688ad401e74a2f59",
+      "counts": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 68,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 0,
+        "sceneCustomerEntityCount": 0,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "durationMs": 202412,
+      "trackPeriodMs": 182931.09062499998,
+      "eventCount": 254,
+      "task": {
+        "taskId": "task:weight:plate-main-001:2",
+        "plateId": "plate-main-001",
+        "dishId": "beef-slices",
+        "staffId": "staff-kitchen-01",
+        "status": "completed",
+        "createdAtMs": 37188,
+        "preparationStartMs": 37188,
+        "readyAtMs": 52188,
+        "completedAtMs": 175745,
+        "triggerEventId": "weight:plate-main-001:2"
+      },
+      "allEventsValidated": true
+    },
+    "truth": {
+      "purpose": "仅供验证，不提供给运行服务",
+      "focusPlateId": "plate-main-001",
+      "takeTimesMs": [
+        37188,
+        40642
+      ],
+      "refillAtMs": 175745,
+      "expectedTakenG": 840,
+      "expectedRefilledG": 840,
+      "minimumRemainingG": 160
+    }
+  },
+  "published": {
+    "datasetId": "demo-dbddba6574bd3093ddc3",
+    "sceneDigest": "sha256:92566c04c5bf13f73d81c888563bd2c9311e67a823b0aff8a42c20674c1cd6d2",
+    "passed": false,
+    "error": "Error: 数据包布局或摘要不一致"
+  },
+  "http": {
+    "available": false,
+    "error": "TypeError: fetch failed"
+  },
+  "handoffComplete": false,
+  "note": "Candidate validation is not a live HTTP acceptance. This script never modifies the main system package or business code."
+}

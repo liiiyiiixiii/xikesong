@@ -1,0 +1,53 @@
+{
+  "datasetId": "lunch-f020d816538009c39383",
+  "weightRows": 5761,
+  "actionRows": 367,
+  "takenDishTypes": 88,
+  "categories": {
+    "mushroom": {
+      "actions": 16,
+      "grams": 550.0
+    },
+    "poultry": {
+      "actions": 26,
+      "grams": 1154.0
+    },
+    "processed": {
+      "actions": 43,
+      "grams": 2041.0
+    },
+    "pork": {
+      "actions": 19,
+      "grams": 840.0
+    },
+    "vegetable": {
+      "actions": 27,
+      "grams": 960.0
+    },
+    "tofu": {
+      "actions": 19,
+      "grams": 660.0
+    },
+    "snack": {
+      "actions": 19,
+      "grams": 880.0
+    },
+    "seafood": {
+      "actions": 37,
+      "grams": 1840.0
+    },
+    "fruit": {
+      "actions": 51,
+      "grams": 2933.0
+    },
+    "beef": {
+      "actions": 26,
+      "grams": 1015.0
+    },
+    "dessert": {
+      "actions": 12,
+      "grams": 539.0
+    }
+  },
+  "zipCRCValid": true
+}

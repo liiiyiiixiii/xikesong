@@ -1,0 +1,25 @@
+{
+  "layoutVersion": "hongkaola-confirmed-65-180-v5",
+  "sceneDigest": "sha256:8f6dd612c349df0fa9d5e86020ff8a2395b554e55046d483f9e679c63cdbae15",
+  "removedWalls": [
+    "wall-9",
+    "wall-10"
+  ],
+  "unchanged": {
+    "tracks": true,
+    "seats": true,
+    "plates": true,
+    "slots": true,
+    "servingWindows": true,
+    "navigation": true,
+    "sauce": true,
+    "drinks": true
+  },
+  "scenicChefs": 3,
+  "supplyStandins": 2,
+  "counts": {
+    "mainPlates": 96,
+    "backupPlates": 78,
+    "seats": 80
+  }
+}

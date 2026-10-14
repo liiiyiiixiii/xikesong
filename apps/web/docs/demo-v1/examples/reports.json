@@ -1,0 +1,78 @@
+{
+  "contractVersion": "1.0.0",
+  "datasetId": "demo-cd9f8d0feac1869a9711",
+  "layoutVersion": "example-only-not-store-capacity",
+  "source": "simulation",
+  "sessionId": "11111111-1111-4111-8111-111111111111",
+  "generation": 0,
+  "revision": 13,
+  "simTimeMs": 45000,
+  "current": {
+    "takenG": 520,
+    "refilledG": 0,
+    "uncertainG": 0
+  },
+  "simulatedDay": {
+    "date": "2026-10-12",
+    "scope": "dataset-once",
+    "datasetId": "demo-cd9f8d0feac1869a9711",
+    "takenG": 520,
+    "refilledG": 0,
+    "uncertainG": 0
+  },
+  "byDish": [
+    {
+      "dishId": "beef-slices",
+      "takenG": 520,
+      "refilledG": 0,
+      "uncertainG": 0
+    },
+    {
+      "dishId": "pork-belly",
+      "takenG": 0,
+      "refilledG": 0,
+      "uncertainG": 0
+    },
+    {
+      "dishId": "chicken-thigh",
+      "takenG": 0,
+      "refilledG": 0,
+      "uncertainG": 0
+    },
+    {
+      "dishId": "shrimp",
+      "takenG": 0,
+      "refilledG": 0,
+      "uncertainG": 0
+    },
+    {
+      "dishId": "squid",
+      "takenG": 0,
+      "refilledG": 0,
+      "uncertainG": 0
+    },
+    {
+      "dishId": "mushroom",
+      "takenG": 0,
+      "refilledG": 0,
+      "uncertainG": 0
+    },
+    {
+      "dishId": "potato",
+      "takenG": 0,
+      "refilledG": 0,
+      "uncertainG": 0
+    },
+    {
+      "dishId": "corn",
+      "takenG": 0,
+      "refilledG": 0,
+      "uncertainG": 0
+    }
+  ],
+  "history": {
+    "halfMonth": null,
+    "month": null
+  },
+  "note": "模拟当日累计仅包含本数据包已经发生的事件，按事件计一次，重播保留已发生记录，不预记未来；取用量不等于吃掉重量、人数或营收。"
+}

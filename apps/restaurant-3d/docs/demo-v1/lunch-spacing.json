@@ -1,0 +1,12 @@
+{
+  "sampleIntervalMs": 200,
+  "minimumMeters": 0.5843978179150042,
+  "closestPair": {
+    "timeMs": 170000,
+    "pair": [
+      "lunch-guest-047",
+      "lunch-guest-057"
+    ]
+  },
+  "violations": []
+}

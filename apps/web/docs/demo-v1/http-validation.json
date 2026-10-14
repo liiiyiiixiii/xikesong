@@ -1,0 +1,289 @@
+{
+  "mode": "full",
+  "method": "read-only complete automatic loop via main HTTP and actual 3D proxy; no controls sent",
+  "passed": true,
+  "datasetId": "demo-dbddba6574bd3093ddc3",
+  "layoutVersion": "hongkaola-confirmed-65-180-v1",
+  "sceneDigest": "sha256:92566c04c5bf13f73d81c888563bd2c9311e67a823b0aff8a42c20674c1cd6d2",
+  "sessionId": "514d8065-2d4c-4d51-8338-e0d770650445",
+  "generation": 1,
+  "initialTimeMs": 322,
+  "reads": 274,
+  "eventCount": 271,
+  "maxRoundTripMs": 5727,
+  "observations": [
+    {
+      "simTimeMs": 322,
+      "label": "full||0|0|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 0,
+        "sceneCustomerEntityCount": 0,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 1907,
+      "label": "full||1|0|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 1,
+        "sceneCustomerEntityCount": 1,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 3136,
+      "label": "full||2|0|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 12999,
+      "label": "full||2|1|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 1,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 14709,
+      "label": "full||2|2|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 26302,
+      "label": "full||2|2|paused",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 26985,
+      "label": "full||2|2|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 0,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 37628,
+      "label": "half|preparing|2|2|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 520,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 51955,
+      "label": "low|preparing|2|2|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 52899,
+      "label": "low|waiting|2|2|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 0,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 175746,
+      "label": "full|completed|2|2|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 2,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 183798,
+      "label": "full|completed|2|1|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 1,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 185428,
+      "label": "full|completed|2|0|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 2,
+        "sceneCustomerEntityCount": 2,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 196507,
+      "label": "full|completed|1|0|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 1,
+        "sceneCustomerEntityCount": 1,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 197510,
+      "label": "full|completed|0|0|running",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 0,
+        "sceneCustomerEntityCount": 0,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    },
+    {
+      "simTimeMs": 201664,
+      "label": "full|completed|0|0|completed",
+      "summary": {
+        "carryingPositionCount": 157,
+        "actualPlateCount": 24,
+        "dishTypeCount": 8,
+        "availableSeatCount": 47,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 0,
+        "sceneCustomerEntityCount": 0,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      }
+    }
+  ],
+  "at": "2026-10-11T18:04:33.400Z"
+}

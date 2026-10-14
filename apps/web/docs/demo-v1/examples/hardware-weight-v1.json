@@ -1,0 +1,11 @@
+{
+  "samples": [
+    {
+      "scaleId": "example-scale",
+      "bootId": "example-boot",
+      "sequence": 1,
+      "sampledAt": "2026-10-12T09:00:00+08:00",
+      "grossG": 1300
+    }
+  ]
+}

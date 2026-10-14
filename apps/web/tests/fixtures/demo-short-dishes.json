@@ -1,0 +1,10 @@
+[
+  {"dishId":"beef-slices","name":"烧烤牛肉","displayOrder":10,"fullG":1000,"tareG":300},
+  {"dishId":"pork-belly","name":"五花肉","displayOrder":20,"fullG":1000,"tareG":300},
+  {"dishId":"chicken-thigh","name":"鸡腿肉","displayOrder":30,"fullG":1000,"tareG":300},
+  {"dishId":"shrimp","name":"鲜虾","displayOrder":40,"fullG":1000,"tareG":300},
+  {"dishId":"squid","name":"鱿鱼","displayOrder":50,"fullG":1000,"tareG":300},
+  {"dishId":"mushroom","name":"香菇","displayOrder":60,"fullG":1000,"tareG":300},
+  {"dishId":"potato","name":"土豆片","displayOrder":70,"fullG":1000,"tareG":300},
+  {"dishId":"corn","name":"玉米","displayOrder":80,"fullG":1000,"tareG":300}
+]

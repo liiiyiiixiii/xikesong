@@ -3,9 +3,9 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import { buildCurrentProfile } from '../red-koala/lib/analysis/current-profile.ts';
+import { buildCurrentProfile } from '../apps/web/lib/analysis/current-profile.ts';
 const root = fileURLToPath(new URL('../', import.meta.url));
-const directory = path.join(root, 'sample-provider/output/unified-36x42-20260903-20261005-v4');
+const directory = path.join(root, 'tools/sample-provider/output/unified-36x42-20260903-20261005-v4');
 const read = name => JSON.parse(readFileSync(path.join(directory, name), 'utf8'));
 const manifest = read('manifest.json'), days = [], stores = new Map();
 for (let i = 1; i <= manifest.expectedBatches; i++) {
@@ -22,6 +22,6 @@ const result = { synthetic: true, datasetId: manifest.datasetId, asOf, inputDish
 assert.equal(profile.dishes.length, manifest.catalog.length);
 const available = profile.dishes.filter(d => d.currentShare !== null);
 if (available.length) assert(Math.abs(available.reduce((sum, d) => sum + d.currentShare, 0) - 1) < 1e-9);
-const output = path.join(root, 'sample-provider/output/profile-simulation.json');
+const output = path.join(root, 'tools/sample-provider/output/profile-simulation.json');
 writeFileSync(output, JSON.stringify(result, null, 2));
-console.log(JSON.stringify({ datasetId: result.datasetId, dishDays: days.length, modeled: profile.modeledCount, learning: profile.learningCount, state: profile.current.state, output: 'sample-provider/output/profile-simulation.json' }, null, 2));
+console.log(JSON.stringify({ datasetId: result.datasetId, dishDays: days.length, modeled: profile.modeledCount, learning: profile.learningCount, state: profile.current.state, output: 'tools/sample-provider/output/profile-simulation.json' }, null, 2));

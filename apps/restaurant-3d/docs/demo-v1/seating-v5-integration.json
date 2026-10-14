@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-10-12T04:24:47.813Z",
+  "sceneDigest": "sha256:8f6dd612c349df0fa9d5e86020ff8a2395b554e55046d483f9e679c63cdbae15",
+  "layoutVersion": "hongkaola-confirmed-65-180-v5",
+  "candidate": {
+    "mode": "official-generator-in-memory-only",
+    "published": false,
+    "report": {
+      "presentation": {
+        "requestedCustomers": 24,
+        "scheduledCustomers": 24,
+        "arrivalIntervalMs": 1100,
+        "activeTrackOnly": true
+      },
+      "layoutVersion": "hongkaola-confirmed-65-180-v5",
+      "sceneDigest": "sha256:8f6dd612c349df0fa9d5e86020ff8a2395b554e55046d483f9e679c63cdbae15",
+      "counts": {
+        "carryingPositionCount": 174,
+        "actualPlateCount": 174,
+        "dishTypeCount": 8,
+        "availableSeatCount": 80,
+        "seatedCustomerCount": 0,
+        "inStoreCustomerCount": 0,
+        "sceneCustomerEntityCount": 0,
+        "takenG": 840,
+        "refilledG": 840,
+        "uncertainG": 0,
+        "qualityIssueCount": 0
+      },
+      "durationMs": 247588,
+      "trackPeriodMs": 196056.09062499998,
+      "eventCount": 2190,
+      "task": {
+        "taskId": "task:weight:plate-main-001:2",
+        "plateId": "plate-main-001",
+        "dishId": "beef-slices",
+        "staffId": "staff-kitchen-01",
+        "status": "completed",
+        "createdAtMs": 37188,
+        "preparationStartMs": 37188,
+        "readyAtMs": 52188,
+        "completedAtMs": 188870,
+        "triggerEventId": "weight:plate-main-001:2"
+      },
+      "allEventsValidated": true
+    },
+    "truth": {
+      "purpose": "仅供验证，不提供给运行服务",
+      "focusPlateId": "plate-main-001",
+      "takeTimesMs": [
+        37188,
+        40642
+      ],
+      "refillAtMs": 188870,
+      "expectedTakenG": 840,
+      "expectedRefilledG": 840,
+      "minimumRemainingG": 160
+    }
+  },
+  "published": {
+    "datasetId": "demo-9074cc30b3b4f4272e01",
+    "sceneDigest": "sha256:8f6dd612c349df0fa9d5e86020ff8a2395b554e55046d483f9e679c63cdbae15",
+    "passed": true
+  },
+  "http": {
+    "available": true,
+    "status": 200,
+    "matches": true
+  },
+  "handoffComplete": true,
+  "note": "Candidate validation is not a live HTTP acceptance. This script never modifies the main system package or business code."
+}

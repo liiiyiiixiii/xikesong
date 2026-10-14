@@ -3,64 +3,47 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-      - run: npm run check:release
-      - run: npm run data:verify
-  application:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: red-koala
+  checks:
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: red-koala/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: npm ci
+      - run: npm run check:release
+      - run: npm run data:verify
+      - run: npm run typecheck
+      - run: npm run lint
       - run: npm test
-      - run: npm run demo:generate && npm run typecheck
       - run: npm run build
       - run: npm run simulate:profile
-        working-directory: .
-      - name: Verify real demo runtime
-        working-directory: .
+      - name: Verify isolated complete demo
+        shell: bash
         run: |
-          node scripts/demo.mjs > /tmp/zhishan-demo.log 2>&1 &
-          demo_pid=$!
-          trap 'kill "$demo_pid" 2>/dev/null || true' EXIT
+          npm run demo -- --no-open > /tmp/zhishan-demo.log 2>&1 &
+          launcher=$!
+          trap 'kill "$launcher" 2>/dev/null || true' EXIT
           ready=0
-          for attempt in $(seq 1 90); do
-            if curl --fail --silent http://127.0.0.1:5273/api/demo/lunch/state > /dev/null; then
+          for attempt in $(seq 1 900); do
+            if curl --fail --silent http://127.0.0.1:4273/api/demo/v1/state > /dev/null; then
               ready=1
               break
             fi
-            if ! kill -0 "$demo_pid" 2>/dev/null; then
-              echo "Demo server exited before readiness"
+            if ! kill -0 "$launcher" 2>/dev/null; then
+              tail -100 /tmp/zhishan-demo.log
               exit 1
             fi
             sleep 2
           done
-          test "$ready" = 1
+          if [ "$ready" != 1 ]; then tail -100 /tmp/zhishan-demo.log; exit 1; fi
           npm run demo:smoke
-  sample-provider:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: sample-provider
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
-          cache-dependency-path: sample-provider/package-lock.json
-      - run: npm ci
-      - run: npm test

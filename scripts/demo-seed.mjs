@@ -3,13 +3,14 @@ import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
-const provider = path.join(root, 'sample-provider');
+const provider = path.join(root, 'tools/sample-provider');
 const state = path.join(root, '.demo-state');
 const port = Number(process.env.DEMO_PORT ?? 5273);
 if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('Invalid DEMO_PORT');
 const base = `http://127.0.0.1:${port}`;
 if (!existsSync(path.join(state, 'wrangler.json'))) throw new Error('Start the isolated server first: npm run demo');
-const env = { ...process.env, SCALE_BASE_URL: base };
+const credentialFile = path.join(state, 'provider.env');
+const env = { ...process.env, SCALE_BASE_URL: base, SCALE_ENV_FILE: credentialFile };
 function run(command, args, cwd = root) {
  const result = spawnSync(command, args, { cwd, env, stdio: 'inherit' });
  if (result.error) throw result.error;
@@ -23,7 +24,7 @@ const historyResponse = await fetch(base + '/api/preferences/history', { signal:
 const history = await historyResponse.json();
 if (!historyResponse.ok && !history.maintenance) throw new Error('Demo backend is not ready');
 if (!history.phase && !history.maintenance) run(process.execPath, ['scripts/setup.mjs'], provider);
-const saved = Object.fromEntries(readFileSync(path.join(provider, '.env'), 'utf8').split(/\r?\n/).filter(l => l.includes('=')).map(l => { const i=l.indexOf('='); return [l.slice(0,i),l.slice(i+1).trim()]; }));
+const saved = Object.fromEntries(readFileSync(credentialFile, 'utf8').split(/\r?\n/).filter(l => l.includes('=')).map(l => { const i=l.indexOf('='); return [l.slice(0,i),l.slice(i+1).trim()]; }));
 if (saved.SCALE_BASE_URL !== base || !saved.SCALE_DEVICE_TOKEN) throw new Error('Saved demo credential does not match the isolated server');
 env.SCALE_DEVICE_TOKEN = saved.SCALE_DEVICE_TOKEN;
 const manifest = JSON.parse(readFileSync(path.join(provider, directory, 'manifest.json'), 'utf8'));

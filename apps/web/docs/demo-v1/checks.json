@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-11T18:05:33.124Z",
+  "datasetId": "demo-dbddba6574bd3093ddc3",
+  "sceneDigest": "sha256:92566c04c5bf13f73d81c888563bd2c9311e67a823b0aff8a42c20674c1cd6d2",
+  "tests": {
+    "all": {
+      "passed": 127,
+      "failed": 0
+    },
+    "demo": {
+      "passed": 16,
+      "failed": 0
+    }
+  },
+  "typecheck": "passed",
+  "lint": "passed",
+  "productionBuild": "passed",
+  "builtDatasetVerified": true,
+  "sourceDigestVerified": true,
+  "fullHttp": {
+    "passed": true,
+    "sessionId": "514d8065-2d4c-4d51-8338-e0d770650445",
+    "generation": 1
+  },
+  "realHardwareValidated": false,
+  "v2Service": "contract-only:501",
+  "legacyIngestCurrentInstance": "history-frozen:409"
+}

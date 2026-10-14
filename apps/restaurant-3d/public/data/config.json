@@ -1,0 +1,6 @@
+{
+  "mode": "demo-v1",
+  "apiBaseUrl": "/api/demo/v1",
+  "kitchenPanelUrl": "/kitchen",
+  "managementUrl": "/admin"
+}

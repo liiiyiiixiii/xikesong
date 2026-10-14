@@ -1,0 +1,87 @@
+// Intercepts every browser API request; no business state or model service is touched.
+import assert from 'node:assert/strict';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
+const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH});
+const page=await browser.newPage({viewport:{width:1366,height:900}});
+const base=process.env.UI_BASE_URL||'http://127.0.0.1:5173';
+const errors=[],writes=[];
+page.on('pageerror',e=>errors.push(e.message));
+const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+const at=new Date().toISOString();
+const scale={id:'scale-1',dishId:'dish-1',dishName:'测试菜',tareG:200,fullG:1000,noiseG:3,enabled:true,updatedAt:at,netG:650,percent:65,status:'active',lastAt:at};
+const dish={id:'dish-1',name:'测试菜',remainingG:650,fullG:1000,percent:65,rateGPerMinute:10,coverage:1,status:'okay',overfull:false,scales:[scale],trend:[]};
+const batch={id:'batch-1',scaleId:scale.id,dishId:dish.id,dishName:dish.name,startedAt:at,deadlineAt:new Date(Date.now()+5*60000).toISOString(),warningMinutes:10,openingG:1000,status:'active'};
+let scenario=true,stall=false,reads=0,showForecast=false;
+const forecast={id:"forecast-1",originDate:today,targetDate:today,cutoff:at,generatedAt:at,late:false,buffer:.1,lines:[{dishId:dish.id,name:dish.name,demand:1000,low:800,high:1200,suggested:1100,samples:7,confidence:"reference",explanation:"测试建议"}]};
+const history=()=>scenario?{phase:'ready',mode:'scenario',start:today,end:today,simulation:{enabled:false}}:{phase:null};
+const freshness={at,timers:[{scaleId:scale.id,dishId:dish.id,name:dish.name,batch,status:'soon',deviceEnabled:true}],rules:[{dishId:dish.id,enabled:true,maxMinutes:120,warningMinutes:10}],catalog:[{id:dish.id,name:dish.name}],feedback:[],suggestions:[],decisions:[]};
+await page.route('**/api/**',async route=>{
+ const req=route.request(),u=new URL(req.url());
+ if(req.method()!=='GET'){writes.push(u.pathname);return route.fulfill({json:{ok:true}});}
+ const p=u.pathname;
+ if(p==='/api/preferences/history')return route.fulfill({json:history()});
+ if(p==='/api/scales/state'){
+  reads++;
+  if(stall)return;
+  return route.fulfill({json:{source:'live',at,dishes:[dish],pending:[{id:'event-1',scaleId:scale.id,dishId:dish.id,at,receivedAt:at,kind:'pending',weightG:100}],...(scenario?{scenario:{datasetId:'fixture',start:today,end:today,asOf:at}}:{})}});
+ }
+ if(p==='/api/freshness')return route.fulfill({json:freshness});
+ if(p==='/api/scales/devices')return route.fulfill({json:{configs:[scale],settings:{openTime:'10:00',closeTime:'21:00'},credentialConfigured:true}});
+ if(p==='/api/scales/summary')return route.fulfill({json:{source:'live',date:today,asOf:at,final:true,dishes:[{dishId:dish.id,name:dish.name,takeG:100,refillG:1000,wasteG:0,remainingG:650,retainedG:0,coverage:1,emptyMinutes:0,unresolved:0}]}});
+ if(p==='/api/preferences')return route.fulfill({json:{source:'live',asOf:at,dates:[today],profile:[],forecasts:showForecast?[forecast]:[],plans:[],executions:[],history:scenario?{...history(),manifest:{parameters:{start:today,end:today,mode:'scenario'}}}:null}});
+ throw new Error(`Unexpected API: ${u}`);
+});
+try{
+ await page.goto(`${base}/admin?mode=live`);
+ await page.locator('.live-dish').waitFor();
+ assert.equal(await page.getByRole('link',{name:'厨房屏幕'}).getAttribute('href'),'/kitchen?mode=live');
+ assert(await page.getByRole('button',{name:'记录撤下',exact:true}).isDisabled());
+ await page.locator('.live-pending-button').click();
+ assert(await page.getByRole('button',{name:'处理',exact:true}).isDisabled());
+ await page.keyboard.press('Escape');
+ await page.locator('.live-dish').click();
+ assert(await page.getByRole('button',{name:'撤下 / 换新盘',exact:true}).isDisabled());
+ await page.keyboard.press('Escape');
+ await page.getByRole('button',{name:'设备与菜品设置'}).click();
+ await page.getByRole('button',{name:'＋ 添加一个秤'}).waitFor();
+ assert(await page.getByRole('button',{name:'＋ 添加一个秤'}).isDisabled());
+ await page.getByRole('button',{name:'编辑',exact:true}).click();
+ assert(await page.getByRole('button',{name:'保存配置'}).isDisabled());
+ assert(await page.getByRole('button',{name:'保存营业时间'}).isDisabled());
+ await page.getByText('主设备接入',{exact:true}).click();
+ assert(await page.getByRole('button',{name:'重新生成接入密钥'}).isDisabled());
+ await page.getByText('菜品时限设置',{exact:true}).click();
+ assert(await page.getByRole('button',{name:'保存规则'}).isDisabled());
+ await page.keyboard.press('Escape');
+ await page.getByRole('button',{name:'每日总结',exact:true}).click();
+ await page.getByRole('tab',{name:'备料计划',exact:true}).click();
+ await page.getByRole('button',{name:'生成建议',exact:true}).waitFor();
+ assert(await page.getByRole('button',{name:'生成建议',exact:true}).isDisabled());
+ await page.getByText('调整建议余量',{exact:false}).click();
+ assert(await page.getByRole('button',{name:'应用并生成'}).isDisabled());
+ await page.getByRole('button',{name:'查看实际备料',exact:true}).click();
+ assert(await page.getByRole('button',{name:'只读记录',exact:true}).isDisabled());
+ assert.equal(writes.length,0);
+ showForecast=true;
+ await page.goto(`${base}/admin?view=daily`);
+ await page.locator("#daily-panel-overview tbody tr").first().waitFor();
+ await page.getByRole("tab",{name:"备料计划",exact:true}).click();
+ await page.getByRole("button",{name:"确认备料计划",exact:true}).waitFor();
+ assert(await page.getByRole("button",{name:"确认备料计划",exact:true}).isDisabled());
+ assert(await page.getByLabel("测试菜确认备料量（克）").evaluate(el=>el.readOnly));
+ scenario=false;
+ await page.goto(`${base}/admin?mode=live`);
+ await page.waitForFunction(()=>!document.querySelector('.live-toolbar-actions button')?.disabled);
+ assert(!(await page.getByRole('button',{name:'记录撤下',exact:true}).isDisabled()));
+ stall=true;
+ const before=reads;
+ await page.waitForFunction(()=>document.querySelector('.live-heading')?.textContent.includes('连接中断'),{},{timeout:20000});
+ assert(reads>before);
+ assert.equal(await page.locator('.live-dish-amount').innerText(),'—\n—');
+ assert(await page.getByRole('button',{name:'记录撤下',exact:true}).isDisabled());
+ stall=false;
+ await page.waitForFunction(()=>document.querySelector('.live-dish-amount')?.textContent.includes('65%'),{},{timeout:15000});
+ assert(!(await page.getByRole('button',{name:'记录撤下',exact:true}).isDisabled()));
+ assert.deepEqual(writes,[]);assert.deepEqual(errors,[]);
+ console.log(JSON.stringify({checks:'scenario read-only on all reachable forms; live controls remain enabled; hung poll times out, hides stale weight and recovers; live kitchen navigation',writes,errors}));
+}catch(error){console.error({errors,body:(await page.locator("body").innerText()).slice(-7000)});throw error;}finally{await browser.close();}

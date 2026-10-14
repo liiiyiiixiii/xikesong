@@ -1,24 +1,47 @@
 {
   "name": "zhishan-tianggong",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "license": "UNLICENSED",
+  "type": "module",
   "engines": {
-    "node": ">=24"
+    "node": ">=24 <25"
   },
+  "workspaces": [
+    "apps/*",
+    "tools/*",
+    "packages/*"
+  ],
   "scripts": {
-    "install:all": "npm ci --prefix red-koala && npm ci --prefix sample-provider",
-    "dev": "npm run dev --prefix red-koala",
-    "build": "npm run build --prefix red-koala",
-    "test": "npm test --prefix red-koala && npm test --prefix sample-provider",
-    "typecheck": "npm run demo:generate --prefix red-koala && npm run typecheck --prefix red-koala",
-    "check:release": "node scripts/check-release.mjs",
+    "postinstall": "npm run build:contracts",
+    "install:all": "npm ci",
+    "build:contracts": "npm run build -w @zhishan/contracts",
     "data:verify": "python3 scripts/dataset.py --verify-only",
     "data:extract": "python3 scripts/dataset.py",
+    "demo:prepare": "npm run data:extract && npm run build",
     "demo": "node scripts/demo.mjs",
-    "demo:prepare": "node scripts/demo.mjs prepare",
     "demo:seed": "node scripts/demo-seed.mjs",
+    "dev": "node scripts/develop.mjs",
+    "dev:operations": "node scripts/develop.mjs --operations",
+    "test": "npm run build:contracts && npm run data:extract && npm run test -w @zhishan/web && npm run test -w @zhishan/restaurant-3d && npm run test -w @zhishan/sample-provider && npm run test:integration",
+    "test:integration": "cd apps/restaurant-3d && tsx --test ../../tests/integration/*.test.ts",
+    "typecheck": "npm run build:contracts && npm run data:extract && npm run typecheck -w @zhishan/web && npm run typecheck -w @zhishan/restaurant-3d",
+    "lint": "npm run lint -w @zhishan/web && node scripts/check-architecture.mjs",
+    "build": "npm run build:contracts && npm run data:extract && npm run build -w @zhishan/web && npm run build -w @zhishan/restaurant-3d",
+    "check:release": "node scripts/check-release.mjs",
     "simulate:profile": "npm run data:extract && node scripts/profile-simulation.mjs",
-    "demo:smoke": "node scripts/demo-smoke.mjs"
+    "demo:smoke": "node scripts/demo-smoke.mjs",
+    "demo:browser": "node scripts/demo-browser.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.58.2",
+    "tsx": "^4.20.6",
+    "typescript": "5.9.3"
+  },
+  "overrides": {
+    "sharp": "0.35.5",
+    "ws": "8.21.0",
+    "undici": "7.29.1",
+    "image-size": "2.0.3"
   }
 }

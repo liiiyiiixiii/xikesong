@@ -1,0 +1,681 @@
+{
+  "sceneDigest": "sha256:8f6dd612c349df0fa9d5e86020ff8a2395b554e55046d483f9e679c63cdbae15",
+  "generatedAt": "2026-10-12T04:25:24.887Z",
+  "default": {
+    "errors": [],
+    "minPlateSeparationM": 0.42792449002592226,
+    "conservativePlateClearanceM": 0.10392449002592224,
+    "carrierPositions": 174,
+    "actualPlates": 174,
+    "dishTypes": 8,
+    "availableSeats": 80
+  },
+  "alternate": {
+    "errors": [],
+    "minPlateSeparationM": 0.5185540941531734,
+    "conservativePlateClearanceM": 0.19455409415317343,
+    "carrierPositions": 130,
+    "actualPlates": 12,
+    "dishTypes": 8,
+    "availableSeats": 64
+  },
+  "seatsByTrack": {
+    "track-main": 47,
+    "track-backup": 33
+  },
+  "seatsByZone": {
+    "retained": 16,
+    "main-upper-inside": 2,
+    "main-north-row": 8,
+    "main-right-upper": 1,
+    "main-left-inner-elbow": 1,
+    "main-left-u-shoulders": 2,
+    "main-right-inner": 2,
+    "main-inner-upper-corner": 1,
+    "main-right-outer": 4,
+    "main-right-upper-arc": 2,
+    "main-return-upper": 2,
+    "main-inner-lower-corner": 1,
+    "main-return-lower": 3,
+    "main-return-lower-right": 1,
+    "main-return-end": 1,
+    "backup-top-row": 9,
+    "backup-front-inner": 7,
+    "backup-side-pairs": 16,
+    "backup-upper-corner": 1
+  },
+  "seatingChanges": {
+    "before": 47,
+    "after": 80,
+    "added": [
+      {
+        "seatId": "track-main-seat-main-upper-inside-2",
+        "zoneId": "main-upper-inside",
+        "position": {
+          "x": 3.998,
+          "y": 0,
+          "z": 6.82
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-north-row-1",
+        "zoneId": "main-north-row",
+        "position": {
+          "x": 5.118,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-north-row-2",
+        "zoneId": "main-north-row",
+        "position": {
+          "x": 6.238,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-north-row-3",
+        "zoneId": "main-north-row",
+        "position": {
+          "x": 7.358,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-north-row-4",
+        "zoneId": "main-north-row",
+        "position": {
+          "x": 8.478,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-north-row-5",
+        "zoneId": "main-north-row",
+        "position": {
+          "x": 9.598,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-north-row-6",
+        "zoneId": "main-north-row",
+        "position": {
+          "x": 10.718,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-north-row-7",
+        "zoneId": "main-north-row",
+        "position": {
+          "x": 11.838,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-north-row-8",
+        "zoneId": "main-north-row",
+        "position": {
+          "x": 12.958,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-upper-9",
+        "zoneId": "main-right-upper",
+        "position": {
+          "x": 14.078,
+          "y": 0,
+          "z": 6.86
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-left-inner-elbow-1",
+        "zoneId": "main-left-inner-elbow",
+        "position": {
+          "x": 3.998,
+          "y": 0,
+          "z": 10
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-left-u-shoulders-1",
+        "zoneId": "main-left-u-shoulders",
+        "position": {
+          "x": 1.158,
+          "y": 0,
+          "z": 13.34
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-left-u-shoulders-2",
+        "zoneId": "main-left-u-shoulders",
+        "position": {
+          "x": 3.998,
+          "y": 0,
+          "z": 13.34
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-inner-1",
+        "zoneId": "main-right-inner",
+        "position": {
+          "x": 14.12,
+          "y": 0,
+          "z": 9.72
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-inner-2",
+        "zoneId": "main-right-inner",
+        "position": {
+          "x": 14.12,
+          "y": 0,
+          "z": 10.84
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-inner-upper-corner-1",
+        "zoneId": "main-inner-upper-corner",
+        "position": {
+          "x": 13.1,
+          "y": 0,
+          "z": 9.7
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-outer-1",
+        "zoneId": "main-right-outer",
+        "position": {
+          "x": 16.96,
+          "y": 0,
+          "z": 9.28
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-outer-2",
+        "zoneId": "main-right-outer",
+        "position": {
+          "x": 16.96,
+          "y": 0,
+          "z": 10.4
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-outer-3",
+        "zoneId": "main-right-outer",
+        "position": {
+          "x": 16.96,
+          "y": 0,
+          "z": 11.52
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-outer-4",
+        "zoneId": "main-right-outer",
+        "position": {
+          "x": 16.382461,
+          "y": 0,
+          "z": 13.261003
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-upper-arc-1",
+        "zoneId": "main-right-upper-arc",
+        "position": {
+          "x": 15.677807,
+          "y": 0,
+          "z": 7.012514
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-right-upper-arc-2",
+        "zoneId": "main-right-upper-arc",
+        "position": {
+          "x": 16.79879,
+          "y": 0,
+          "z": 8.1212
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-return-upper-1",
+        "zoneId": "main-return-upper",
+        "position": {
+          "x": 10.88,
+          "y": 0,
+          "z": 10.98
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-return-upper-2",
+        "zoneId": "main-return-upper",
+        "position": {
+          "x": 12,
+          "y": 0,
+          "z": 10.98
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-inner-lower-corner-1",
+        "zoneId": "main-inner-lower-corner",
+        "position": {
+          "x": 13.12,
+          "y": 0,
+          "z": 10.98
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-return-lower-1",
+        "zoneId": "main-return-lower",
+        "position": {
+          "x": 11.25,
+          "y": 0,
+          "z": 13.82
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-return-lower-2",
+        "zoneId": "main-return-lower",
+        "position": {
+          "x": 12.37,
+          "y": 0,
+          "z": 13.82
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-return-lower-3",
+        "zoneId": "main-return-lower",
+        "position": {
+          "x": 13.49,
+          "y": 0,
+          "z": 13.82
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-return-lower-right-1",
+        "zoneId": "main-return-lower-right",
+        "position": {
+          "x": 14.61,
+          "y": 0,
+          "z": 13.82
+        }
+      },
+      {
+        "seatId": "track-main-seat-main-return-end-1",
+        "zoneId": "main-return-end",
+        "position": {
+          "x": 9.280152,
+          "y": 0,
+          "z": 12.4
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-1",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 16.25,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-2",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 17.37,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-3",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 18.49,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-4",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 19.61,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-5",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 20.73,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-6",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 21.85,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-7",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 22.97,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-8",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 24.09,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-top-row-9",
+        "zoneId": "backup-top-row",
+        "position": {
+          "x": 25.21,
+          "y": 0,
+          "z": 1.38
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-front-inner-1",
+        "zoneId": "backup-front-inner",
+        "position": {
+          "x": 16.25,
+          "y": 0,
+          "z": 4.22
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-front-inner-2",
+        "zoneId": "backup-front-inner",
+        "position": {
+          "x": 17.37,
+          "y": 0,
+          "z": 4.22
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-front-inner-3",
+        "zoneId": "backup-front-inner",
+        "position": {
+          "x": 18.49,
+          "y": 0,
+          "z": 4.22
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-front-inner-4",
+        "zoneId": "backup-front-inner",
+        "position": {
+          "x": 19.61,
+          "y": 0,
+          "z": 4.22
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-front-inner-5",
+        "zoneId": "backup-front-inner",
+        "position": {
+          "x": 20.73,
+          "y": 0,
+          "z": 4.22
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-front-inner-6",
+        "zoneId": "backup-front-inner",
+        "position": {
+          "x": 21.85,
+          "y": 0,
+          "z": 4.22
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-front-inner-7",
+        "zoneId": "backup-front-inner",
+        "position": {
+          "x": 22.97,
+          "y": 0,
+          "z": 4.22
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-1",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 27.36,
+          "y": 0,
+          "z": 4.45
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-2",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 24.52,
+          "y": 0,
+          "z": 4.45
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-3",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 27.36,
+          "y": 0,
+          "z": 5.57
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-4",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 24.52,
+          "y": 0,
+          "z": 5.57
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-5",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 27.36,
+          "y": 0,
+          "z": 6.69
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-6",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 24.52,
+          "y": 0,
+          "z": 6.69
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-7",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 27.36,
+          "y": 0,
+          "z": 7.81
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-8",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 24.52,
+          "y": 0,
+          "z": 7.81
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-9",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 27.36,
+          "y": 0,
+          "z": 8.93
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-10",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 24.52,
+          "y": 0,
+          "z": 8.93
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-11",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 27.36,
+          "y": 0,
+          "z": 10.05
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-12",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 24.52,
+          "y": 0,
+          "z": 10.05
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-13",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 27.36,
+          "y": 0,
+          "z": 11.17
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-14",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 24.52,
+          "y": 0,
+          "z": 11.17
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-15",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 27.36,
+          "y": 0,
+          "z": 12.29
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-side-pairs-16",
+        "zoneId": "backup-side-pairs",
+        "position": {
+          "x": 24.52,
+          "y": 0,
+          "z": 12.29
+        }
+      },
+      {
+        "seatId": "track-backup-seat-backup-upper-corner-1",
+        "zoneId": "backup-upper-corner",
+        "position": {
+          "x": 27.082071,
+          "y": 0,
+          "z": 2.40674
+        }
+      }
+    ],
+    "moved": [
+      {
+        "seatId": "track-main-seat-54460-L",
+        "zoneId": "main-upper-inside",
+        "position": {
+          "x": 3.998,
+          "y": 0,
+          "z": 5.7
+        }
+      }
+    ],
+    "removed": [
+      "track-main-seat-30940-L",
+      "track-main-seat-34300-L",
+      "track-main-seat-35420-L",
+      "track-main-seat-38780-L",
+      "track-backup-seat-16380-R",
+      "track-backup-seat-17500-R",
+      "track-backup-seat-18620-R",
+      "track-backup-seat-19740-R",
+      "track-backup-seat-20860-R",
+      "track-backup-seat-21980-R",
+      "track-backup-seat-23100-R",
+      "track-backup-seat-24220-R",
+      "track-backup-seat-27580-R",
+      "track-backup-seat-28700-R",
+      "track-backup-seat-29820-R",
+      "track-backup-seat-30940-R",
+      "track-backup-seat-32060-R",
+      "track-backup-seat-33180-R",
+      "track-backup-seat-34300-R",
+      "track-backup-seat-35420-R",
+      "track-backup-seat-36540-R",
+      "track-backup-seat-39900-R",
+      "track-backup-seat-41020-R",
+      "track-backup-seat-42140-R",
+      "track-backup-seat-43260-R",
+      "track-backup-seat-44380-R",
+      "track-backup-seat-45500-R",
+      "track-backup-seat-46620-R",
+      "track-backup-seat-47740-R",
+      "track-backup-seat-48860-R"
+    ]
+  },
+  "staffPositions": [
+    {
+      "windowId": "supply-main",
+      "position": {
+        "x": 3.584797,
+        "y": 0,
+        "z": 4.321857
+      }
+    },
+    {
+      "windowId": "supply-backup",
+      "position": {
+        "x": 12.3,
+        "y": 0,
+        "z": 0.93
+      }
+    }
+  ]
+}

@@ -1,0 +1,870 @@
+{
+  "layoutVersion": "hongkaola-confirmed-65-180-v1",
+  "contentDigest": "sha256:92566c04c5bf13f73d81c888563bd2c9311e67a823b0aff8a42c20674c1cd6d2",
+  "layoutParameters": {
+    "leftGapPercent": 65,
+    "sauceLengthPercent": 180
+  },
+  "tracks": [
+    {
+      "trackId": "track-main",
+      "svgPath": "M 177.9 340 V 770 A 16 16 0 0 0 209.9 770 V 578 A 48 48 0 0 1 257.9 530 H 770 A 16 16 0 0 1 786 546 V 694 A 10 10 0 0 1 776 704 H 625 A 16 16 0 0 0 625 736 H 776 A 42 42 0 0 0 818 694 V 546 A 48 48 0 0 0 770 498 H 257.9 A 48 48 0 0 1 209.9 450 V 340 C 209.9 310 197.9 291 177.9 291 A 16 16 0 0 0 177.9 323 C 191.9 323 177.9 330 177.9 340 Z",
+      "lengthM": 58.537949
+    },
+    {
+      "trackId": "track-backup",
+      "svgPath": "M 650 184 H 1330 A 48 48 0 0 1 1378 232 V 760 A 16 16 0 0 1 1346 760 V 232 A 16 16 0 0 0 1330 216 H 650 A 16 16 0 0 1 650 184 Z",
+      "lengthM": 52.340817
+    }
+  ],
+  "walls": [
+    {
+      "wallId": "wall-1",
+      "from": {
+        "x": 0,
+        "y": 0,
+        "z": 15
+      },
+      "to": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-2",
+      "from": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "to": {
+        "x": 29,
+        "y": 0,
+        "z": 0
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-3",
+      "from": {
+        "x": 29,
+        "y": 0,
+        "z": 0
+      },
+      "to": {
+        "x": 29,
+        "y": 0,
+        "z": 15
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-4",
+      "from": {
+        "x": 13.1,
+        "y": 0,
+        "z": 0
+      },
+      "to": {
+        "x": 13.1,
+        "y": 0,
+        "z": 1.32
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-5",
+      "from": {
+        "x": 13.1,
+        "y": 0,
+        "z": 2.68
+      },
+      "to": {
+        "x": 13.1,
+        "y": 0,
+        "z": 4.9
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-6",
+      "from": {
+        "x": 13.1,
+        "y": 0,
+        "z": 4.9
+      },
+      "to": {
+        "x": 12.78,
+        "y": 0,
+        "z": 4.9
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-7",
+      "from": {
+        "x": 0,
+        "y": 0,
+        "z": 4.9
+      },
+      "to": {
+        "x": 1.918,
+        "y": 0,
+        "z": 4.9
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-8",
+      "from": {
+        "x": 3.238,
+        "y": 0,
+        "z": 4.9
+      },
+      "to": {
+        "x": 7.58,
+        "y": 0,
+        "z": 4.9
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-9",
+      "from": {
+        "x": 2.8,
+        "y": 0,
+        "z": 2.28
+      },
+      "to": {
+        "x": 10.3,
+        "y": 0,
+        "z": 2.28
+      },
+      "thicknessM": 0.36
+    },
+    {
+      "wallId": "wall-10",
+      "from": {
+        "x": 7.3,
+        "y": 0,
+        "z": 2.28
+      },
+      "to": {
+        "x": 7.3,
+        "y": 0,
+        "z": 4.36
+      },
+      "thicknessM": 0.36
+    }
+  ],
+  "sauce": {
+    "min": {
+      "x": 18.2,
+      "y": 0,
+      "z": 5.76
+    },
+    "max": {
+      "x": 20.44,
+      "y": 0,
+      "z": 14.4
+    }
+  },
+  "servingWindows": [
+    {
+      "windowId": "supply-main",
+      "trackId": "track-main",
+      "centerSM": 56.23818,
+      "halfWidthM": 0.18,
+      "position": {
+        "x": 2.834797,
+        "z": 4.321857,
+        "angle": -2.838729377890572,
+        "y": 0.98
+      },
+      "staffPosition": {
+        "x": 3.584797,
+        "y": 0,
+        "z": 4.321857
+      }
+    },
+    {
+      "windowId": "supply-backup",
+      "trackId": "track-backup",
+      "centerSM": 0.6,
+      "halfWidthM": 0.18,
+      "position": {
+        "x": 12.300000000000002,
+        "z": 1.68,
+        "angle": 1.5707963267948966,
+        "y": 0.98
+      },
+      "staffPosition": {
+        "x": 12.3,
+        "y": 0,
+        "z": 0.93
+      }
+    }
+  ],
+  "seats": [
+    {
+      "seatId": "track-main-seat-700-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 1.158,
+        "y": 0,
+        "z": 5.5
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 1.798,
+        "z": 5.5
+      }
+    },
+    {
+      "seatId": "track-main-seat-1820-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 1.158,
+        "y": 0,
+        "z": 6.62
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 1.798,
+        "z": 6.62
+      }
+    },
+    {
+      "seatId": "track-main-seat-2940-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 1.158,
+        "y": 0,
+        "z": 7.74
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 1.798,
+        "z": 7.74
+      }
+    },
+    {
+      "seatId": "track-main-seat-4060-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 1.158,
+        "y": 0,
+        "z": 8.86
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 1.798,
+        "z": 8.86
+      }
+    },
+    {
+      "seatId": "track-main-seat-5180-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 1.158,
+        "y": 0,
+        "z": 9.98
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 1.798,
+        "z": 9.98
+      }
+    },
+    {
+      "seatId": "track-main-seat-6300-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 1.158,
+        "y": 0,
+        "z": 11.1
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 1.798,
+        "z": 11.1
+      }
+    },
+    {
+      "seatId": "track-main-seat-7420-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 1.158,
+        "y": 0,
+        "z": 12.22
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 1.798,
+        "z": 12.22
+      }
+    },
+    {
+      "seatId": "track-main-seat-10780-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 3.998,
+        "y": 0,
+        "z": 12.225151
+      },
+      "angle": -1.5707963267948968,
+      "grill": {
+        "x": 3.358,
+        "z": 12.225151
+      }
+    },
+    {
+      "seatId": "track-main-seat-11900-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 3.998,
+        "y": 0,
+        "z": 11.105151
+      },
+      "angle": -1.5707963267948968,
+      "grill": {
+        "x": 3.358,
+        "z": 11.105151
+      }
+    },
+    {
+      "seatId": "track-main-seat-16380-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 5.284912,
+        "y": 0,
+        "z": 9.7
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 5.284912,
+        "z": 9.06
+      }
+    },
+    {
+      "seatId": "track-main-seat-17500-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 6.404912,
+        "y": 0,
+        "z": 9.7
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 6.404912,
+        "z": 9.06
+      }
+    },
+    {
+      "seatId": "track-main-seat-18620-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 7.524912,
+        "y": 0,
+        "z": 9.7
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 7.524912,
+        "z": 9.06
+      }
+    },
+    {
+      "seatId": "track-main-seat-19740-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 8.644912,
+        "y": 0,
+        "z": 9.7
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 8.644912,
+        "z": 9.06
+      }
+    },
+    {
+      "seatId": "track-main-seat-20860-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 9.764912,
+        "y": 0,
+        "z": 9.7
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 9.764912,
+        "z": 9.06
+      }
+    },
+    {
+      "seatId": "track-main-seat-21980-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 10.884912,
+        "y": 0,
+        "z": 9.7
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 10.884912,
+        "z": 9.06
+      }
+    },
+    {
+      "seatId": "track-main-seat-23100-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 12.004912,
+        "y": 0,
+        "z": 9.7
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 12.004912,
+        "z": 9.06
+      }
+    },
+    {
+      "seatId": "track-main-seat-30940-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 12.2517,
+        "y": 0,
+        "z": 10.98
+      },
+      "angle": 6.123233995736766e-17,
+      "grill": {
+        "x": 12.2517,
+        "z": 11.62
+      }
+    },
+    {
+      "seatId": "track-main-seat-34300-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 12.50315,
+        "y": 0,
+        "z": 13.82
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 12.50315,
+        "z": 13.18
+      }
+    },
+    {
+      "seatId": "track-main-seat-35420-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 13.62315,
+        "y": 0,
+        "z": 13.82
+      },
+      "angle": 3.141592653589793,
+      "grill": {
+        "x": 13.62315,
+        "z": 13.18
+      }
+    },
+    {
+      "seatId": "track-main-seat-38780-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 16.16,
+        "y": 0,
+        "z": 10.436288
+      },
+      "angle": -1.5707963267948968,
+      "grill": {
+        "x": 15.52,
+        "z": 10.436288
+      }
+    },
+    {
+      "seatId": "track-main-seat-54460-L",
+      "trackId": "track-main",
+      "position": {
+        "x": 3.998,
+        "y": 0,
+        "z": 6.094164
+      },
+      "angle": -1.5707963267948968,
+      "grill": {
+        "x": 3.358,
+        "z": 6.094164
+      }
+    },
+    {
+      "seatId": "track-backup-seat-16380-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 27.36,
+        "y": 0,
+        "z": 3.912062
+      },
+      "angle": -1.5707963267948966,
+      "grill": {
+        "x": 26.72,
+        "z": 3.912062
+      }
+    },
+    {
+      "seatId": "track-backup-seat-17500-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 27.36,
+        "y": 0,
+        "z": 5.032062
+      },
+      "angle": -1.5707963267948966,
+      "grill": {
+        "x": 26.72,
+        "z": 5.032062
+      }
+    },
+    {
+      "seatId": "track-backup-seat-18620-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 27.36,
+        "y": 0,
+        "z": 6.152062
+      },
+      "angle": -1.5707963267948966,
+      "grill": {
+        "x": 26.72,
+        "z": 6.152062
+      }
+    },
+    {
+      "seatId": "track-backup-seat-19740-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 27.36,
+        "y": 0,
+        "z": 7.272062
+      },
+      "angle": -1.5707963267948966,
+      "grill": {
+        "x": 26.72,
+        "z": 7.272062
+      }
+    },
+    {
+      "seatId": "track-backup-seat-20860-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 27.36,
+        "y": 0,
+        "z": 8.392062
+      },
+      "angle": -1.5707963267948966,
+      "grill": {
+        "x": 26.72,
+        "z": 8.392062
+      }
+    },
+    {
+      "seatId": "track-backup-seat-21980-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 27.36,
+        "y": 0,
+        "z": 9.512062
+      },
+      "angle": -1.5707963267948966,
+      "grill": {
+        "x": 26.72,
+        "z": 9.512062
+      }
+    },
+    {
+      "seatId": "track-backup-seat-23100-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 27.36,
+        "y": 0,
+        "z": 10.632062
+      },
+      "angle": -1.5707963267948966,
+      "grill": {
+        "x": 26.72,
+        "z": 10.632062
+      }
+    },
+    {
+      "seatId": "track-backup-seat-24220-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 27.36,
+        "y": 0,
+        "z": 11.752062
+      },
+      "angle": -1.5707963267948966,
+      "grill": {
+        "x": 26.72,
+        "z": 11.752062
+      }
+    },
+    {
+      "seatId": "track-backup-seat-27580-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 12.293088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 12.293088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-28700-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 11.173088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 11.173088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-29820-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 10.053088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 10.053088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-30940-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 8.933088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 8.933088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-32060-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 7.813088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 7.813088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-33180-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 6.693088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 6.693088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-34300-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 5.573088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 5.573088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-35420-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 4.453088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 4.453088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-36540-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 24.52,
+        "y": 0,
+        "z": 3.333088
+      },
+      "angle": 1.5707963267948966,
+      "grill": {
+        "x": 25.16,
+        "z": 3.333088
+      }
+    },
+    {
+      "seatId": "track-backup-seat-39900-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 23.135667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 23.135667,
+        "z": 2.78
+      }
+    },
+    {
+      "seatId": "track-backup-seat-41020-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 22.015667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 22.015667,
+        "z": 2.78
+      }
+    },
+    {
+      "seatId": "track-backup-seat-42140-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 20.895667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 20.895667,
+        "z": 2.78
+      }
+    },
+    {
+      "seatId": "track-backup-seat-43260-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 19.775667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 19.775667,
+        "z": 2.78
+      }
+    },
+    {
+      "seatId": "track-backup-seat-44380-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 18.655667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 18.655667,
+        "z": 2.78
+      }
+    },
+    {
+      "seatId": "track-backup-seat-45500-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 17.535667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 17.535667,
+        "z": 2.78
+      }
+    },
+    {
+      "seatId": "track-backup-seat-46620-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 16.415667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 16.415667,
+        "z": 2.78
+      }
+    },
+    {
+      "seatId": "track-backup-seat-47740-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 15.295667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 15.295667,
+        "z": 2.78
+      }
+    },
+    {
+      "seatId": "track-backup-seat-48860-R",
+      "trackId": "track-backup",
+      "position": {
+        "x": 14.175667,
+        "y": 0,
+        "z": 3.42
+      },
+      "angle": -3.141592653589793,
+      "grill": {
+        "x": 14.175667,
+        "z": 2.78
+      }
+    }
+  ]
+}

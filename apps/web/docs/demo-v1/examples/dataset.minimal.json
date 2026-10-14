@@ -1,0 +1,336 @@
+{
+  "contractVersion": "1.0.0",
+  "datasetId": "demo-cd9f8d0feac1869a9711",
+  "layoutVersion": "example-only-not-store-capacity",
+  "sceneDigest": "sha256:f3808abdfd7ca30329a6424981d8856f1ad1e7eb5a9816fc76e915abeb267c4a",
+  "source": "simulation",
+  "simulatedBusinessDate": "2026-10-12",
+  "durationMs": 89000,
+  "seed": 20261012,
+  "rules": {
+    "label": "演示参数，非实测门店标准",
+    "halfRatio": 0.5,
+    "lowRatio": 0.2,
+    "emptyG": 5,
+    "preparationMs": 15000,
+    "actionMs": 1000,
+    "staleAfterMs": 30000,
+    "maxDeltaG": 1200
+  },
+  "dishes": [
+    {
+      "dishId": "beef-slices",
+      "name": "烧烤牛肉",
+      "displayOrder": 10,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "pork-belly",
+      "name": "五花肉",
+      "displayOrder": 20,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "chicken-thigh",
+      "name": "鸡腿肉",
+      "displayOrder": 30,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "shrimp",
+      "name": "鲜虾",
+      "displayOrder": 40,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "squid",
+      "name": "鱿鱼",
+      "displayOrder": 50,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "mushroom",
+      "name": "香菇",
+      "displayOrder": 60,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "potato",
+      "name": "土豆片",
+      "displayOrder": 70,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "corn",
+      "name": "玉米",
+      "displayOrder": 80,
+      "fullG": 1000,
+      "tareG": 300
+    }
+  ],
+  "staff": [
+    {
+      "staffId": "staff-kitchen-01",
+      "name": "厨房员工"
+    }
+  ],
+  "initialWeights": [
+    {
+      "plateId": "example-plate",
+      "grossG": 1300,
+      "bootId": "sim-boot-1",
+      "sequence": 0
+    }
+  ],
+  "events": [
+    {
+      "eventId": "enter:customer-001",
+      "targetEntityId": "customer-001",
+      "startTimeMs": 1000,
+      "applyTimeMs": 1000,
+      "endTimeMs": 1000,
+      "eventType": "customer.enter",
+      "layer": "action",
+      "customerId": "customer-001"
+    },
+    {
+      "eventId": "enter:customer-002",
+      "targetEntityId": "customer-002",
+      "startTimeMs": 2000,
+      "applyTimeMs": 2000,
+      "endTimeMs": 2000,
+      "eventType": "customer.enter",
+      "layer": "action",
+      "customerId": "customer-002"
+    },
+    {
+      "eventId": "seat:customer-001",
+      "targetEntityId": "customer-001",
+      "startTimeMs": 1000,
+      "applyTimeMs": 6000,
+      "endTimeMs": 6000,
+      "eventType": "customer.seat",
+      "layer": "action",
+      "customerId": "customer-001",
+      "seatId": "example-seat-0"
+    },
+    {
+      "eventId": "seat:customer-002",
+      "targetEntityId": "customer-002",
+      "startTimeMs": 2000,
+      "applyTimeMs": 7000,
+      "endTimeMs": 7000,
+      "eventType": "customer.seat",
+      "layer": "action",
+      "customerId": "customer-002",
+      "seatId": "example-seat-1"
+    },
+    {
+      "eventId": "weight:example-plate:1",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 20000,
+      "applyTimeMs": 20000,
+      "endTimeMs": 20000,
+      "eventType": "weight.observed",
+      "layer": "observation",
+      "plateId": "example-plate",
+      "scaleId": "scale:example-plate",
+      "bootId": "sim-boot-1",
+      "sequence": 1,
+      "grossG": 1300,
+      "quality": "good",
+      "region": "unknown"
+    },
+    {
+      "eventId": "weight:example-plate:2",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 40000,
+      "applyTimeMs": 40000,
+      "endTimeMs": 40000,
+      "eventType": "weight.observed",
+      "layer": "observation",
+      "plateId": "example-plate",
+      "scaleId": "scale:example-plate",
+      "bootId": "sim-boot-1",
+      "sequence": 2,
+      "grossG": 1300,
+      "quality": "good",
+      "region": "unknown"
+    },
+    {
+      "eventId": "take:1",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 44000,
+      "applyTimeMs": 45000,
+      "endTimeMs": 46000,
+      "eventType": "customer.take",
+      "layer": "action",
+      "plateId": "example-plate",
+      "customerId": "customer-001",
+      "seatId": "example-seat-0",
+      "operationId": "op:take:1"
+    },
+    {
+      "eventId": "weight:example-plate:3",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 45000,
+      "applyTimeMs": 45000,
+      "endTimeMs": 45000,
+      "eventType": "weight.observed",
+      "layer": "observation",
+      "plateId": "example-plate",
+      "scaleId": "scale:example-plate",
+      "bootId": "sim-boot-1",
+      "sequence": 3,
+      "grossG": 780,
+      "quality": "good",
+      "region": "dining",
+      "operationId": "op:take:1"
+    },
+    {
+      "eventId": "take:2",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 48000,
+      "applyTimeMs": 49000,
+      "endTimeMs": 50000,
+      "eventType": "customer.take",
+      "layer": "action",
+      "plateId": "example-plate",
+      "customerId": "customer-002",
+      "seatId": "example-seat-1",
+      "operationId": "op:take:2"
+    },
+    {
+      "eventId": "weight:example-plate:4",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 49000,
+      "applyTimeMs": 49000,
+      "endTimeMs": 49000,
+      "eventType": "weight.observed",
+      "layer": "observation",
+      "plateId": "example-plate",
+      "scaleId": "scale:example-plate",
+      "bootId": "sim-boot-1",
+      "sequence": 4,
+      "grossG": 460,
+      "quality": "good",
+      "region": "dining",
+      "operationId": "op:take:2"
+    },
+    {
+      "eventId": "weight:example-plate:5",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 60000,
+      "applyTimeMs": 60000,
+      "endTimeMs": 60000,
+      "eventType": "weight.observed",
+      "layer": "observation",
+      "plateId": "example-plate",
+      "scaleId": "scale:example-plate",
+      "bootId": "sim-boot-1",
+      "sequence": 5,
+      "grossG": 460,
+      "quality": "good",
+      "region": "unknown"
+    },
+    {
+      "eventId": "refill:1",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 69000,
+      "applyTimeMs": 70000,
+      "endTimeMs": 71000,
+      "eventType": "staff.refill",
+      "layer": "action",
+      "plateId": "example-plate",
+      "staffId": "staff-kitchen-01",
+      "windowId": "example-window",
+      "taskId": "task:weight:example-plate:3",
+      "operationId": "op:refill:1"
+    },
+    {
+      "eventId": "weight:example-plate:6",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 70000,
+      "applyTimeMs": 70000,
+      "endTimeMs": 70000,
+      "eventType": "weight.observed",
+      "layer": "observation",
+      "plateId": "example-plate",
+      "scaleId": "scale:example-plate",
+      "bootId": "sim-boot-1",
+      "sequence": 6,
+      "grossG": 1300,
+      "quality": "good",
+      "region": "kitchen",
+      "operationId": "op:refill:1"
+    },
+    {
+      "eventId": "depart:customer-001",
+      "targetEntityId": "customer-001",
+      "startTimeMs": 78000,
+      "applyTimeMs": 78000,
+      "endTimeMs": 78000,
+      "eventType": "customer.depart",
+      "layer": "action",
+      "customerId": "customer-001"
+    },
+    {
+      "eventId": "depart:customer-002",
+      "targetEntityId": "customer-002",
+      "startTimeMs": 79000,
+      "applyTimeMs": 79000,
+      "endTimeMs": 79000,
+      "eventType": "customer.depart",
+      "layer": "action",
+      "customerId": "customer-002"
+    },
+    {
+      "eventId": "weight:example-plate:7",
+      "targetEntityId": "example-plate",
+      "startTimeMs": 80000,
+      "applyTimeMs": 80000,
+      "endTimeMs": 80000,
+      "eventType": "weight.observed",
+      "layer": "observation",
+      "plateId": "example-plate",
+      "scaleId": "scale:example-plate",
+      "bootId": "sim-boot-1",
+      "sequence": 7,
+      "grossG": 1300,
+      "quality": "good",
+      "region": "unknown"
+    },
+    {
+      "eventId": "leave:customer-001",
+      "targetEntityId": "customer-001",
+      "startTimeMs": 78000,
+      "applyTimeMs": 83000,
+      "endTimeMs": 83000,
+      "eventType": "customer.leave",
+      "layer": "action",
+      "customerId": "customer-001"
+    },
+    {
+      "eventId": "leave:customer-002",
+      "targetEntityId": "customer-002",
+      "startTimeMs": 79000,
+      "applyTimeMs": 84000,
+      "endTimeMs": 84000,
+      "eventType": "customer.leave",
+      "layer": "action",
+      "customerId": "customer-002"
+    }
+  ],
+  "provenance": {
+    "scenePath": "examples/scene.minimal.json",
+    "sceneDigest": "sha256:f3808abdfd7ca30329a6424981d8856f1ad1e7eb5a9816fc76e915abeb267c4a",
+    "generatorVersion": "demo-v1.0.0"
+  }
+}

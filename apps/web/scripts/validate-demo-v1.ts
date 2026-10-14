@@ -1,0 +1,10 @@
+import {readFileSync} from 'node:fs';
+import {validatePackage,sceneDigest} from '../lib/demo-v1/core.ts';
+const scene=JSON.parse(readFileSync('data/demo-v1/scene-manifest.v1.json','utf8'));
+const data=JSON.parse(readFileSync('data/demo-v1/dataset.json','utf8'));
+const source=JSON.parse(readFileSync(data.provenance.scenePath,'utf8'));
+if(await sceneDigest(source)!==scene.contentDigest)throw Error('正式场景源已经变化，需要重新生成数据包');
+const {result}=await validatePackage(scene,data);
+const truth=JSON.parse(readFileSync('data/demo-v1/validation-truth.json','utf8'));
+if(result.summary.takenG!==truth.expectedTakenG||result.summary.refilledG!==truth.expectedRefilledG)throw Error('计算结果与外部验证真值不符');
+console.log(JSON.stringify({valid:true,datasetId:data.datasetId,sceneDigest:scene.contentDigest,summary:result.summary,tasks:result.tasks},null,2));

@@ -1,0 +1,262 @@
+{
+  "contractVersion": "1.0.0",
+  "datasetId": "demo-cd9f8d0feac1869a9711",
+  "layoutVersion": "example-only-not-store-capacity",
+  "source": "simulation",
+  "sessionId": "11111111-1111-4111-8111-111111111111",
+  "generation": 0,
+  "revision": 13,
+  "simTimeMs": 45000,
+  "scene": {
+    "contractVersion": "1.0.0",
+    "layoutVersion": "example-only-not-store-capacity",
+    "contentDigest": "sha256:f3808abdfd7ca30329a6424981d8856f1ad1e7eb5a9816fc76e915abeb267c4a",
+    "coordinateSystem": {
+      "unit": "m",
+      "origin": "example only",
+      "axes": {
+        "x": "right",
+        "y": "up",
+        "z": "down"
+      },
+      "drawingScaleM": 0.02,
+      "measured": false
+    },
+    "layoutParameters": {
+      "leftGapPercent": 65,
+      "sauceLengthPercent": 180
+    },
+    "tracks": [
+      {
+        "trackId": "example-track",
+        "enabled": true,
+        "lengthM": 40,
+        "speedMps": 1,
+        "direction": 1,
+        "path": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 10
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 10
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ],
+        "arcLengthLut": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "sM": 0
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "sM": 10
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 10,
+            "sM": 20
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 10,
+            "sM": 30
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "sM": 40
+          }
+        ]
+      }
+    ],
+    "slots": [
+      {
+        "slotId": "example-slot",
+        "trackId": "example-track",
+        "s0M": 0,
+        "usable": true
+      }
+    ],
+    "plates": [
+      {
+        "plateId": "example-plate",
+        "slotId": "example-slot",
+        "dishId": "beef-slices",
+        "diameterM": 0.32,
+        "heightM": 0.08
+      }
+    ],
+    "kitchen": {
+      "boundary": [
+        {
+          "x": -1,
+          "y": 0,
+          "z": 9
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 9
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 11
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 11
+        }
+      ]
+    },
+    "servingWindows": [
+      {
+        "windowId": "example-window",
+        "trackId": "example-track",
+        "centerSM": 30,
+        "halfWidthM": 0.3,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 10
+        },
+        "staffPosition": {
+          "x": 0.75,
+          "y": 0,
+          "z": 10
+        }
+      }
+    ],
+    "seats": [
+      {
+        "seatId": "example-seat-0",
+        "usable": true,
+        "position": {
+          "x": 5,
+          "y": 0,
+          "z": -1
+        },
+        "takeWindow": {
+          "trackId": "example-track",
+          "centerSM": 5,
+          "halfWidthM": 0.25
+        }
+      },
+      {
+        "seatId": "example-seat-1",
+        "usable": true,
+        "position": {
+          "x": 9,
+          "y": 0,
+          "z": -1
+        },
+        "takeWindow": {
+          "trackId": "example-track",
+          "centerSM": 9,
+          "halfWidthM": 0.25
+        }
+      }
+    ]
+  },
+  "dishes": [
+    {
+      "dishId": "beef-slices",
+      "name": "烧烤牛肉",
+      "displayOrder": 10,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "pork-belly",
+      "name": "五花肉",
+      "displayOrder": 20,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "chicken-thigh",
+      "name": "鸡腿肉",
+      "displayOrder": 30,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "shrimp",
+      "name": "鲜虾",
+      "displayOrder": 40,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "squid",
+      "name": "鱿鱼",
+      "displayOrder": 50,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "mushroom",
+      "name": "香菇",
+      "displayOrder": 60,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "potato",
+      "name": "土豆片",
+      "displayOrder": 70,
+      "fullG": 1000,
+      "tareG": 300
+    },
+    {
+      "dishId": "corn",
+      "name": "玉米",
+      "displayOrder": 80,
+      "fullG": 1000,
+      "tareG": 300
+    }
+  ],
+  "rules": {
+    "label": "演示参数，非实测门店标准",
+    "halfRatio": 0.5,
+    "lowRatio": 0.2,
+    "emptyG": 5,
+    "preparationMs": 15000,
+    "actionMs": 1000,
+    "staleAfterMs": 30000,
+    "maxDeltaG": 1200
+  },
+  "durationMs": 89000,
+  "capacityLabel": "与模型一致的演示容量，非实测门店容量",
+  "provenance": {
+    "scenePath": "examples/scene.minimal.json",
+    "sceneDigest": "sha256:f3808abdfd7ca30329a6424981d8856f1ad1e7eb5a9816fc76e915abeb267c4a",
+    "generatorVersion": "demo-v1.0.0"
+  }
+}

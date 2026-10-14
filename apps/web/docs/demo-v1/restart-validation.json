@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "method": "停止实际5173服务进程，重新npm run dev，比较完整暂停快照",
+  "sessionId": "ea7e1e14-d19e-4e6c-bd13-07e3514b751d",
+  "datasetId": "demo-dbddba6574bd3093ddc3",
+  "generation": 1,
+  "simTimeMs": 836,
+  "at": "2026-10-11T17:45:09.600Z"
+}

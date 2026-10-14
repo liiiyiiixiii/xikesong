@@ -1,0 +1,2665 @@
+{
+  "source": "red-koala/data/demo-v1/dishes.json · lunch-rush-96 · main unique; disabled backup reference display",
+  "dishCatalog": [
+    {
+      "dishId": "dish-lunch-001",
+      "name": "澳洲M4原切上脑",
+      "displayOrder": 1,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 12010557,
+        "variant": 1
+      }
+    },
+    {
+      "dishId": "dish-lunch-002",
+      "name": "青柠雪花牛肋条",
+      "displayOrder": 2,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "strip",
+        "color": 13201752,
+        "variant": 2
+      }
+    },
+    {
+      "dishId": "dish-lunch-003",
+      "name": "黑椒牛肉片",
+      "displayOrder": 3,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 8999750,
+        "variant": 3
+      }
+    },
+    {
+      "dishId": "dish-lunch-004",
+      "name": "孜然牛肉",
+      "displayOrder": 4,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 11233342,
+        "variant": 4
+      }
+    },
+    {
+      "dishId": "dish-lunch-005",
+      "name": "蒜香牛肉粒",
+      "displayOrder": 5,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "cube",
+        "color": 11295044,
+        "variant": 5
+      }
+    },
+    {
+      "dishId": "dish-lunch-006",
+      "name": "韩式肥牛",
+      "displayOrder": 6,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "roll",
+        "color": 14852491,
+        "variant": 6
+      }
+    },
+    {
+      "dishId": "dish-lunch-007",
+      "name": "麻辣牛肉",
+      "displayOrder": 7,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 11880498,
+        "variant": 7
+      }
+    },
+    {
+      "dishId": "dish-lunch-008",
+      "name": "原切牛舌",
+      "displayOrder": 8,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "tongue",
+        "color": 13140867,
+        "variant": 8
+      }
+    },
+    {
+      "dishId": "dish-lunch-009",
+      "name": "酱香牛小排",
+      "displayOrder": 9,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "rib",
+        "color": 8868155,
+        "variant": 9
+      }
+    },
+    {
+      "dishId": "dish-lunch-010",
+      "name": "藤椒牛肉",
+      "displayOrder": 10,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 11895138,
+        "variant": 10
+      }
+    },
+    {
+      "dishId": "dish-lunch-011",
+      "name": "沙茶牛肉",
+      "displayOrder": 11,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 8936252,
+        "variant": 11
+      }
+    },
+    {
+      "dishId": "dish-lunch-012",
+      "name": "洋葱牛肉",
+      "displayOrder": 12,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "beef",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 12152401,
+        "variant": 12
+      }
+    },
+    {
+      "dishId": "dish-lunch-013",
+      "name": "原切五花肉",
+      "displayOrder": 13,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "belly",
+        "color": 14121064,
+        "variant": 13
+      }
+    },
+    {
+      "dishId": "dish-lunch-014",
+      "name": "港式叉烧肉",
+      "displayOrder": 14,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "chunk",
+        "color": 11028527,
+        "variant": 14
+      }
+    },
+    {
+      "dishId": "dish-lunch-015",
+      "name": "芝士黄油五花肉",
+      "displayOrder": 15,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "belly",
+        "color": 14989182,
+        "variant": 15
+      }
+    },
+    {
+      "dishId": "dish-lunch-016",
+      "name": "酸菜五花肉",
+      "displayOrder": 16,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "belly",
+        "color": 13085817,
+        "variant": 16
+      }
+    },
+    {
+      "dishId": "dish-lunch-017",
+      "name": "泡菜五花肉",
+      "displayOrder": 17,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "belly",
+        "color": 13989448,
+        "variant": 17
+      }
+    },
+    {
+      "dishId": "dish-lunch-018",
+      "name": "油泼辣子五花肉",
+      "displayOrder": 18,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "belly",
+        "color": 11949109,
+        "variant": 18
+      }
+    },
+    {
+      "dishId": "dish-lunch-019",
+      "name": "蜜汁梅花肉",
+      "displayOrder": 19,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "belly",
+        "color": 14121064,
+        "variant": 19
+      }
+    },
+    {
+      "dishId": "dish-lunch-020",
+      "name": "黑椒猪颈肉",
+      "displayOrder": 20,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 14121064,
+        "variant": 20
+      }
+    },
+    {
+      "dishId": "dish-lunch-021",
+      "name": "蒜香排骨",
+      "displayOrder": 21,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "rib",
+        "color": 14121064,
+        "variant": 21
+      }
+    },
+    {
+      "dishId": "dish-lunch-022",
+      "name": "香辣猪脆骨",
+      "displayOrder": 22,
+      "fullG": 360,
+      "tareG": 300,
+      "category": "pork",
+      "portionG": 35,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "cube",
+        "color": 14121064,
+        "variant": 22
+      }
+    },
+    {
+      "dishId": "dish-lunch-023",
+      "name": "奥尔良鸡腿肉",
+      "displayOrder": 23,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "poultry",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "chunk",
+        "color": 14785133,
+        "variant": 23
+      }
+    },
+    {
+      "dishId": "dish-lunch-024",
+      "name": "香辣鸡翅中",
+      "displayOrder": 24,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "poultry",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "wing",
+        "color": 14785133,
+        "variant": 24
+      }
+    },
+    {
+      "dishId": "dish-lunch-025",
+      "name": "蜜汁鸡翅根",
+      "displayOrder": 25,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "poultry",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "wing",
+        "color": 14785133,
+        "variant": 25
+      }
+    },
+    {
+      "dishId": "dish-lunch-026",
+      "name": "黑椒鸡胸肉",
+      "displayOrder": 26,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "poultry",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 14785133,
+        "variant": 26
+      }
+    },
+    {
+      "dishId": "dish-lunch-027",
+      "name": "孜然鸡胗",
+      "displayOrder": 27,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "poultry",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "chunk",
+        "color": 14785133,
+        "variant": 27
+      }
+    },
+    {
+      "dishId": "dish-lunch-028",
+      "name": "蒜香鸡软骨",
+      "displayOrder": 28,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "poultry",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "cube",
+        "color": 14785133,
+        "variant": 28
+      }
+    },
+    {
+      "dishId": "dish-lunch-029",
+      "name": "照烧鸡腿肉",
+      "displayOrder": 29,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "poultry",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "chunk",
+        "color": 14785133,
+        "variant": 29
+      }
+    },
+    {
+      "dishId": "dish-lunch-030",
+      "name": "藤椒鸭胸肉",
+      "displayOrder": 30,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "poultry",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "chunk",
+        "color": 14785133,
+        "variant": 30
+      }
+    },
+    {
+      "dishId": "dish-lunch-031",
+      "name": "鲜虾",
+      "displayOrder": 31,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "shrimp",
+        "color": 15310215,
+        "variant": 31
+      }
+    },
+    {
+      "dishId": "dish-lunch-032",
+      "name": "蒜香鱿鱼圈",
+      "displayOrder": 32,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "ring",
+        "color": 15257533,
+        "variant": 32
+      }
+    },
+    {
+      "dishId": "dish-lunch-033",
+      "name": "香辣鱿鱼须",
+      "displayOrder": 33,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "tentacle",
+        "color": 15310215,
+        "variant": 33
+      }
+    },
+    {
+      "dishId": "dish-lunch-034",
+      "name": "巴沙鱼片",
+      "displayOrder": 34,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 15850690,
+        "variant": 34
+      }
+    },
+    {
+      "dishId": "dish-lunch-035",
+      "name": "黑椒墨鱼仔",
+      "displayOrder": 35,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "tentacle",
+        "color": 15310215,
+        "variant": 35
+      }
+    },
+    {
+      "dishId": "dish-lunch-036",
+      "name": "蒜蓉扇贝",
+      "displayOrder": 36,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "shell",
+        "color": 15310215,
+        "variant": 36
+      }
+    },
+    {
+      "dishId": "dish-lunch-037",
+      "name": "青口贝",
+      "displayOrder": 37,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "shell",
+        "color": 5142376,
+        "variant": 37
+      }
+    },
+    {
+      "dishId": "dish-lunch-038",
+      "name": "香煎多春鱼",
+      "displayOrder": 38,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "fish",
+        "color": 15310215,
+        "variant": 38
+      }
+    },
+    {
+      "dishId": "dish-lunch-039",
+      "name": "孜然虾仁",
+      "displayOrder": 39,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "shrimp",
+        "color": 15310215,
+        "variant": 39
+      }
+    },
+    {
+      "dishId": "dish-lunch-040",
+      "name": "柠檬龙利鱼",
+      "displayOrder": 40,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "seafood",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "slice",
+        "color": 15310215,
+        "variant": 40
+      }
+    },
+    {
+      "dishId": "dish-lunch-041",
+      "name": "原味烤肠",
+      "displayOrder": 41,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "processed",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "sausage",
+        "color": 13138784,
+        "variant": 41
+      }
+    },
+    {
+      "dishId": "dish-lunch-042",
+      "name": "黑椒香肠",
+      "displayOrder": 42,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "processed",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "sausage",
+        "color": 13138784,
+        "variant": 42
+      }
+    },
+    {
+      "dishId": "dish-lunch-043",
+      "name": "芝士肠",
+      "displayOrder": 43,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "processed",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "sausage",
+        "color": 13138784,
+        "variant": 43
+      }
+    },
+    {
+      "dishId": "dish-lunch-044",
+      "name": "蟹柳",
+      "displayOrder": 44,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "processed",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "stick",
+        "color": 15102808,
+        "variant": 44
+      }
+    },
+    {
+      "dishId": "dish-lunch-045",
+      "name": "鱼豆腐",
+      "displayOrder": 45,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "processed",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "cube",
+        "color": 13138784,
+        "variant": 45
+      }
+    },
+    {
+      "dishId": "dish-lunch-046",
+      "name": "撒尿牛丸",
+      "displayOrder": 46,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "processed",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "ball",
+        "color": 13138784,
+        "variant": 46
+      }
+    },
+    {
+      "dishId": "dish-lunch-047",
+      "name": "墨鱼丸",
+      "displayOrder": 47,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "processed",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "ball",
+        "color": 13138784,
+        "variant": 47
+      }
+    },
+    {
+      "dishId": "dish-lunch-048",
+      "name": "亲亲肠",
+      "displayOrder": 48,
+      "fullG": 320,
+      "tareG": 300,
+      "category": "processed",
+      "portionG": 40,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "ball",
+        "color": 13138784,
+        "variant": 48
+      }
+    },
+    {
+      "dishId": "dish-lunch-049",
+      "name": "生菜",
+      "displayOrder": 49,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "vegetable",
+        "color": 6726973,
+        "variant": 49
+      }
+    },
+    {
+      "dishId": "dish-lunch-050",
+      "name": "韭菜",
+      "displayOrder": 50,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "stick",
+        "color": 4619825,
+        "variant": 50
+      }
+    },
+    {
+      "dishId": "dish-lunch-051",
+      "name": "西兰花",
+      "displayOrder": 51,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "broccoli",
+        "color": 5212990,
+        "variant": 51
+      }
+    },
+    {
+      "dishId": "dish-lunch-052",
+      "name": "土豆片",
+      "displayOrder": 52,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "disc",
+        "color": 8826184,
+        "variant": 52
+      }
+    },
+    {
+      "dishId": "dish-lunch-053",
+      "name": "红薯片",
+      "displayOrder": 53,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "disc",
+        "color": 15772996,
+        "variant": 53
+      }
+    },
+    {
+      "dishId": "dish-lunch-054",
+      "name": "南瓜片",
+      "displayOrder": 54,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "wedge",
+        "color": 15504445,
+        "variant": 54
+      }
+    },
+    {
+      "dishId": "dish-lunch-055",
+      "name": "玉米段",
+      "displayOrder": 55,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "corn",
+        "color": 8826184,
+        "variant": 55
+      }
+    },
+    {
+      "dishId": "dish-lunch-056",
+      "name": "莲藕片",
+      "displayOrder": 56,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "lotus",
+        "color": 8826184,
+        "variant": 56
+      }
+    },
+    {
+      "dishId": "dish-lunch-057",
+      "name": "山药片",
+      "displayOrder": 57,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "disc",
+        "color": 8826184,
+        "variant": 57
+      }
+    },
+    {
+      "dishId": "dish-lunch-058",
+      "name": "茄子片",
+      "displayOrder": 58,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "disc",
+        "color": 7688822,
+        "variant": 58
+      }
+    },
+    {
+      "dishId": "dish-lunch-059",
+      "name": "西葫芦片",
+      "displayOrder": 59,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "disc",
+        "color": 10927463,
+        "variant": 59
+      }
+    },
+    {
+      "dishId": "dish-lunch-060",
+      "name": "彩椒块",
+      "displayOrder": 60,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "chunk",
+        "color": 14504254,
+        "variant": 60
+      }
+    },
+    {
+      "dishId": "dish-lunch-061",
+      "name": "洋葱圈",
+      "displayOrder": 61,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "ring",
+        "color": 8826184,
+        "variant": 61
+      }
+    },
+    {
+      "dishId": "dish-lunch-062",
+      "name": "娃娃菜",
+      "displayOrder": 62,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "vegetable",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "vegetable",
+        "color": 8826184,
+        "variant": 62
+      }
+    },
+    {
+      "dishId": "dish-lunch-063",
+      "name": "香菇",
+      "displayOrder": 63,
+      "fullG": 200,
+      "tareG": 300,
+      "category": "mushroom",
+      "portionG": 25,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "mushroom",
+        "color": 13350542,
+        "variant": 63
+      }
+    },
+    {
+      "dishId": "dish-lunch-064",
+      "name": "金针菇",
+      "displayOrder": 64,
+      "fullG": 200,
+      "tareG": 300,
+      "category": "mushroom",
+      "portionG": 25,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "enoki",
+        "color": 13350542,
+        "variant": 64
+      }
+    },
+    {
+      "dishId": "dish-lunch-065",
+      "name": "杏鲍菇",
+      "displayOrder": 65,
+      "fullG": 200,
+      "tareG": 300,
+      "category": "mushroom",
+      "portionG": 25,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "disc",
+        "color": 13350542,
+        "variant": 65
+      }
+    },
+    {
+      "dishId": "dish-lunch-066",
+      "name": "白玉菇",
+      "displayOrder": 66,
+      "fullG": 200,
+      "tareG": 300,
+      "category": "mushroom",
+      "portionG": 25,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "enoki",
+        "color": 15657166,
+        "variant": 66
+      }
+    },
+    {
+      "dishId": "dish-lunch-067",
+      "name": "口蘑",
+      "displayOrder": 67,
+      "fullG": 200,
+      "tareG": 300,
+      "category": "mushroom",
+      "portionG": 25,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "mushroom",
+        "color": 13350542,
+        "variant": 67
+      }
+    },
+    {
+      "dishId": "dish-lunch-068",
+      "name": "蟹味菇",
+      "displayOrder": 68,
+      "fullG": 200,
+      "tareG": 300,
+      "category": "mushroom",
+      "portionG": 25,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "enoki",
+        "color": 11903106,
+        "variant": 68
+      }
+    },
+    {
+      "dishId": "dish-lunch-069",
+      "name": "老豆腐",
+      "displayOrder": 69,
+      "fullG": 300,
+      "tareG": 300,
+      "category": "tofu",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "cube",
+        "color": 15983802,
+        "variant": 69
+      }
+    },
+    {
+      "dishId": "dish-lunch-070",
+      "name": "千页豆腐",
+      "displayOrder": 70,
+      "fullG": 300,
+      "tareG": 300,
+      "category": "tofu",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "cube",
+        "color": 15123855,
+        "variant": 70
+      }
+    },
+    {
+      "dishId": "dish-lunch-071",
+      "name": "豆皮卷",
+      "displayOrder": 71,
+      "fullG": 300,
+      "tareG": 300,
+      "category": "tofu",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "roll",
+        "color": 15190417,
+        "variant": 71
+      }
+    },
+    {
+      "dishId": "dish-lunch-072",
+      "name": "香干",
+      "displayOrder": 72,
+      "fullG": 300,
+      "tareG": 300,
+      "category": "tofu",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "cube",
+        "color": 10250305,
+        "variant": 72
+      }
+    },
+    {
+      "dishId": "dish-lunch-073",
+      "name": "腐竹",
+      "displayOrder": 73,
+      "fullG": 300,
+      "tareG": 300,
+      "category": "tofu",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "stick",
+        "color": 15190417,
+        "variant": 73
+      }
+    },
+    {
+      "dishId": "dish-lunch-074",
+      "name": "油豆腐",
+      "displayOrder": 74,
+      "fullG": 300,
+      "tareG": 300,
+      "category": "tofu",
+      "portionG": 30,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "cube",
+        "color": 15190417,
+        "variant": 74
+      }
+    },
+    {
+      "dishId": "dish-lunch-075",
+      "name": "迷你菠萝堡",
+      "displayOrder": 75,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "burger",
+        "color": 14129992,
+        "variant": 75
+      }
+    },
+    {
+      "dishId": "dish-lunch-076",
+      "name": "迷你牛肉汉堡",
+      "displayOrder": 76,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "burger",
+        "color": 14129992,
+        "variant": 76
+      }
+    },
+    {
+      "dishId": "dish-lunch-077",
+      "name": "香酥鸡块",
+      "displayOrder": 77,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "snack",
+        "color": 14129992,
+        "variant": 77
+      }
+    },
+    {
+      "dishId": "dish-lunch-078",
+      "name": "薯条",
+      "displayOrder": 78,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "fries",
+        "color": 14129992,
+        "variant": 78
+      }
+    },
+    {
+      "dishId": "dish-lunch-079",
+      "name": "春卷",
+      "displayOrder": 79,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "roll",
+        "color": 14129992,
+        "variant": 79
+      }
+    },
+    {
+      "dishId": "dish-lunch-080",
+      "name": "芝麻球",
+      "displayOrder": 80,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "ball",
+        "color": 14129992,
+        "variant": 80
+      }
+    },
+    {
+      "dishId": "dish-lunch-081",
+      "name": "红糖糍粑",
+      "displayOrder": 81,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "cube",
+        "color": 14129992,
+        "variant": 81
+      }
+    },
+    {
+      "dishId": "dish-lunch-082",
+      "name": "葱香小烧饼",
+      "displayOrder": 82,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "disc",
+        "color": 14129992,
+        "variant": 82
+      }
+    },
+    {
+      "dishId": "dish-lunch-083",
+      "name": "蛋挞",
+      "displayOrder": 83,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "tart",
+        "color": 14129992,
+        "variant": 83
+      }
+    },
+    {
+      "dishId": "dish-lunch-084",
+      "name": "榴莲披萨",
+      "displayOrder": 84,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "snack",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "pizza",
+        "color": 14129992,
+        "variant": 84
+      }
+    },
+    {
+      "dishId": "dish-lunch-085",
+      "name": "瑞士卷",
+      "displayOrder": 85,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "dessert",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "swiss",
+        "color": 16046502,
+        "variant": 85
+      }
+    },
+    {
+      "dishId": "dish-lunch-086",
+      "name": "奶油泡芙",
+      "displayOrder": 86,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "dessert",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "puff",
+        "color": 16046502,
+        "variant": 86
+      }
+    },
+    {
+      "dishId": "dish-lunch-087",
+      "name": "果味华夫饼",
+      "displayOrder": 87,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "dessert",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "waffle",
+        "color": 16046502,
+        "variant": 87
+      }
+    },
+    {
+      "dishId": "dish-lunch-088",
+      "name": "巧克力布朗尼",
+      "displayOrder": 88,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "dessert",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "brownie",
+        "color": 5715498,
+        "variant": 88
+      }
+    },
+    {
+      "dishId": "dish-lunch-089",
+      "name": "芒果布丁",
+      "displayOrder": 89,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "dessert",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "pudding",
+        "color": 16046502,
+        "variant": 89
+      }
+    },
+    {
+      "dishId": "dish-lunch-090",
+      "name": "椰汁西米露",
+      "displayOrder": 90,
+      "fullG": 240,
+      "tareG": 300,
+      "category": "dessert",
+      "portionG": 40,
+      "preparationMs": 20000,
+      "visual": {
+        "shape": "bowl",
+        "color": 16046502,
+        "variant": 90
+      }
+    },
+    {
+      "dishId": "dish-lunch-091",
+      "name": "红颜草莓",
+      "displayOrder": 91,
+      "fullG": 400,
+      "tareG": 300,
+      "category": "fruit",
+      "portionG": 50,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "strawberry",
+        "color": 14302784,
+        "variant": 91
+      }
+    },
+    {
+      "dishId": "dish-lunch-092",
+      "name": "越南菠萝蜜",
+      "displayOrder": 92,
+      "fullG": 400,
+      "tareG": 300,
+      "category": "fruit",
+      "portionG": 50,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "pod",
+        "color": 15709013,
+        "variant": 92
+      }
+    },
+    {
+      "dishId": "dish-lunch-093",
+      "name": "木瓜",
+      "displayOrder": 93,
+      "fullG": 400,
+      "tareG": 300,
+      "category": "fruit",
+      "portionG": 50,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "wedge",
+        "color": 15965264,
+        "variant": 93
+      }
+    },
+    {
+      "dishId": "dish-lunch-094",
+      "name": "西瓜",
+      "displayOrder": 94,
+      "fullG": 400,
+      "tareG": 300,
+      "category": "fruit",
+      "portionG": 50,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "watermelon",
+        "color": 15356756,
+        "variant": 94
+      }
+    },
+    {
+      "dishId": "dish-lunch-095",
+      "name": "菠萝块",
+      "displayOrder": 95,
+      "fullG": 400,
+      "tareG": 300,
+      "category": "fruit",
+      "portionG": 50,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "chunk",
+        "color": 16240469,
+        "variant": 95
+      }
+    },
+    {
+      "dishId": "dish-lunch-096",
+      "name": "葡萄",
+      "displayOrder": 96,
+      "fullG": 400,
+      "tareG": 300,
+      "category": "fruit",
+      "portionG": 50,
+      "preparationMs": 15000,
+      "visual": {
+        "shape": "grape",
+        "color": 7824789,
+        "variant": 96
+      }
+    }
+  ],
+  "plates": [
+    {
+      "plateId": "plate-main-001",
+      "slotId": "track-main-slot-001",
+      "dishId": "dish-lunch-001",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-002",
+      "slotId": "track-main-slot-004",
+      "dishId": "dish-lunch-004",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-003",
+      "slotId": "track-main-slot-007",
+      "dishId": "dish-lunch-007",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-004",
+      "slotId": "track-main-slot-011",
+      "dishId": "dish-lunch-011",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-005",
+      "slotId": "track-main-slot-014",
+      "dishId": "dish-lunch-014",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-006",
+      "slotId": "track-main-slot-018",
+      "dishId": "dish-lunch-018",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-007",
+      "slotId": "track-main-slot-021",
+      "dishId": "dish-lunch-021",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-008",
+      "slotId": "track-main-slot-025",
+      "dishId": "dish-lunch-025",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-009",
+      "slotId": "track-main-slot-028",
+      "dishId": "dish-lunch-028",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-010",
+      "slotId": "track-main-slot-032",
+      "dishId": "dish-lunch-032",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-011",
+      "slotId": "track-main-slot-035",
+      "dishId": "dish-lunch-035",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-012",
+      "slotId": "track-main-slot-039",
+      "dishId": "dish-lunch-039",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-013",
+      "slotId": "track-main-slot-042",
+      "dishId": "dish-lunch-042",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-014",
+      "slotId": "track-main-slot-045",
+      "dishId": "dish-lunch-045",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-015",
+      "slotId": "track-main-slot-049",
+      "dishId": "dish-lunch-049",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-016",
+      "slotId": "track-main-slot-052",
+      "dishId": "dish-lunch-052",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-017",
+      "slotId": "track-main-slot-056",
+      "dishId": "dish-lunch-056",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-018",
+      "slotId": "track-main-slot-059",
+      "dishId": "dish-lunch-059",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-019",
+      "slotId": "track-main-slot-063",
+      "dishId": "dish-lunch-063",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-020",
+      "slotId": "track-main-slot-066",
+      "dishId": "dish-lunch-066",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-021",
+      "slotId": "track-main-slot-070",
+      "dishId": "dish-lunch-070",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-022",
+      "slotId": "track-main-slot-073",
+      "dishId": "dish-lunch-073",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-023",
+      "slotId": "track-main-slot-077",
+      "dishId": "dish-lunch-077",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-main-024",
+      "slotId": "track-main-slot-080",
+      "dishId": "dish-lunch-080",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-002",
+      "slotId": "track-main-slot-002",
+      "dishId": "dish-lunch-002",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-003",
+      "slotId": "track-main-slot-003",
+      "dishId": "dish-lunch-003",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-005",
+      "slotId": "track-main-slot-005",
+      "dishId": "dish-lunch-005",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-006",
+      "slotId": "track-main-slot-006",
+      "dishId": "dish-lunch-006",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-008",
+      "slotId": "track-main-slot-008",
+      "dishId": "dish-lunch-008",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-009",
+      "slotId": "track-main-slot-009",
+      "dishId": "dish-lunch-009",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-010",
+      "slotId": "track-main-slot-010",
+      "dishId": "dish-lunch-010",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-012",
+      "slotId": "track-main-slot-012",
+      "dishId": "dish-lunch-012",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-013",
+      "slotId": "track-main-slot-013",
+      "dishId": "dish-lunch-013",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-015",
+      "slotId": "track-main-slot-015",
+      "dishId": "dish-lunch-015",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-016",
+      "slotId": "track-main-slot-016",
+      "dishId": "dish-lunch-016",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-017",
+      "slotId": "track-main-slot-017",
+      "dishId": "dish-lunch-017",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-019",
+      "slotId": "track-main-slot-019",
+      "dishId": "dish-lunch-019",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-020",
+      "slotId": "track-main-slot-020",
+      "dishId": "dish-lunch-020",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-022",
+      "slotId": "track-main-slot-022",
+      "dishId": "dish-lunch-022",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-023",
+      "slotId": "track-main-slot-023",
+      "dishId": "dish-lunch-023",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-024",
+      "slotId": "track-main-slot-024",
+      "dishId": "dish-lunch-024",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-026",
+      "slotId": "track-main-slot-026",
+      "dishId": "dish-lunch-026",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-027",
+      "slotId": "track-main-slot-027",
+      "dishId": "dish-lunch-027",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-029",
+      "slotId": "track-main-slot-029",
+      "dishId": "dish-lunch-029",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-030",
+      "slotId": "track-main-slot-030",
+      "dishId": "dish-lunch-030",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-031",
+      "slotId": "track-main-slot-031",
+      "dishId": "dish-lunch-031",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-033",
+      "slotId": "track-main-slot-033",
+      "dishId": "dish-lunch-033",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-034",
+      "slotId": "track-main-slot-034",
+      "dishId": "dish-lunch-034",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-036",
+      "slotId": "track-main-slot-036",
+      "dishId": "dish-lunch-036",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-037",
+      "slotId": "track-main-slot-037",
+      "dishId": "dish-lunch-037",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-038",
+      "slotId": "track-main-slot-038",
+      "dishId": "dish-lunch-038",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-040",
+      "slotId": "track-main-slot-040",
+      "dishId": "dish-lunch-040",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-041",
+      "slotId": "track-main-slot-041",
+      "dishId": "dish-lunch-041",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-043",
+      "slotId": "track-main-slot-043",
+      "dishId": "dish-lunch-043",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-044",
+      "slotId": "track-main-slot-044",
+      "dishId": "dish-lunch-044",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-046",
+      "slotId": "track-main-slot-046",
+      "dishId": "dish-lunch-046",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-047",
+      "slotId": "track-main-slot-047",
+      "dishId": "dish-lunch-047",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-048",
+      "slotId": "track-main-slot-048",
+      "dishId": "dish-lunch-048",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-050",
+      "slotId": "track-main-slot-050",
+      "dishId": "dish-lunch-050",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-051",
+      "slotId": "track-main-slot-051",
+      "dishId": "dish-lunch-051",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-053",
+      "slotId": "track-main-slot-053",
+      "dishId": "dish-lunch-053",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-054",
+      "slotId": "track-main-slot-054",
+      "dishId": "dish-lunch-054",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-055",
+      "slotId": "track-main-slot-055",
+      "dishId": "dish-lunch-055",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-057",
+      "slotId": "track-main-slot-057",
+      "dishId": "dish-lunch-057",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-058",
+      "slotId": "track-main-slot-058",
+      "dishId": "dish-lunch-058",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-060",
+      "slotId": "track-main-slot-060",
+      "dishId": "dish-lunch-060",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-061",
+      "slotId": "track-main-slot-061",
+      "dishId": "dish-lunch-061",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-062",
+      "slotId": "track-main-slot-062",
+      "dishId": "dish-lunch-062",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-064",
+      "slotId": "track-main-slot-064",
+      "dishId": "dish-lunch-064",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-065",
+      "slotId": "track-main-slot-065",
+      "dishId": "dish-lunch-065",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-067",
+      "slotId": "track-main-slot-067",
+      "dishId": "dish-lunch-067",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-068",
+      "slotId": "track-main-slot-068",
+      "dishId": "dish-lunch-068",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-069",
+      "slotId": "track-main-slot-069",
+      "dishId": "dish-lunch-069",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-071",
+      "slotId": "track-main-slot-071",
+      "dishId": "dish-lunch-071",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-072",
+      "slotId": "track-main-slot-072",
+      "dishId": "dish-lunch-072",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-074",
+      "slotId": "track-main-slot-074",
+      "dishId": "dish-lunch-074",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-075",
+      "slotId": "track-main-slot-075",
+      "dishId": "dish-lunch-075",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-076",
+      "slotId": "track-main-slot-076",
+      "dishId": "dish-lunch-076",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-078",
+      "slotId": "track-main-slot-078",
+      "dishId": "dish-lunch-078",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-079",
+      "slotId": "track-main-slot-079",
+      "dishId": "dish-lunch-079",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-081",
+      "slotId": "track-main-slot-081",
+      "dishId": "dish-lunch-081",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-082",
+      "slotId": "track-main-slot-082",
+      "dishId": "dish-lunch-082",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-083",
+      "slotId": "track-main-slot-083",
+      "dishId": "dish-lunch-083",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-084",
+      "slotId": "track-main-slot-084",
+      "dishId": "dish-lunch-084",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-085",
+      "slotId": "track-main-slot-085",
+      "dishId": "dish-lunch-085",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-086",
+      "slotId": "track-main-slot-086",
+      "dishId": "dish-lunch-086",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-087",
+      "slotId": "track-main-slot-087",
+      "dishId": "dish-lunch-087",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-088",
+      "slotId": "track-main-slot-088",
+      "dishId": "dish-lunch-088",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-089",
+      "slotId": "track-main-slot-089",
+      "dishId": "dish-lunch-089",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-090",
+      "slotId": "track-main-slot-090",
+      "dishId": "dish-lunch-090",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-091",
+      "slotId": "track-main-slot-091",
+      "dishId": "dish-lunch-091",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-092",
+      "slotId": "track-main-slot-092",
+      "dishId": "dish-lunch-092",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-093",
+      "slotId": "track-main-slot-093",
+      "dishId": "dish-lunch-093",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-094",
+      "slotId": "track-main-slot-094",
+      "dishId": "dish-lunch-094",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-095",
+      "slotId": "track-main-slot-095",
+      "dishId": "dish-lunch-095",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-main-slot-096",
+      "slotId": "track-main-slot-096",
+      "dishId": "dish-lunch-096",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-001",
+      "slotId": "track-backup-slot-001",
+      "dishId": "dish-lunch-001",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-002",
+      "slotId": "track-backup-slot-002",
+      "dishId": "dish-lunch-002",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-003",
+      "slotId": "track-backup-slot-003",
+      "dishId": "dish-lunch-003",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-004",
+      "slotId": "track-backup-slot-004",
+      "dishId": "dish-lunch-004",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-005",
+      "slotId": "track-backup-slot-005",
+      "dishId": "dish-lunch-005",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-006",
+      "slotId": "track-backup-slot-006",
+      "dishId": "dish-lunch-006",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-007",
+      "slotId": "track-backup-slot-007",
+      "dishId": "dish-lunch-007",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-008",
+      "slotId": "track-backup-slot-008",
+      "dishId": "dish-lunch-008",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-009",
+      "slotId": "track-backup-slot-009",
+      "dishId": "dish-lunch-009",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-010",
+      "slotId": "track-backup-slot-010",
+      "dishId": "dish-lunch-010",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-011",
+      "slotId": "track-backup-slot-011",
+      "dishId": "dish-lunch-011",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-012",
+      "slotId": "track-backup-slot-012",
+      "dishId": "dish-lunch-012",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-013",
+      "slotId": "track-backup-slot-013",
+      "dishId": "dish-lunch-013",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-014",
+      "slotId": "track-backup-slot-014",
+      "dishId": "dish-lunch-014",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-015",
+      "slotId": "track-backup-slot-015",
+      "dishId": "dish-lunch-015",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-016",
+      "slotId": "track-backup-slot-016",
+      "dishId": "dish-lunch-016",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-017",
+      "slotId": "track-backup-slot-017",
+      "dishId": "dish-lunch-017",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-018",
+      "slotId": "track-backup-slot-018",
+      "dishId": "dish-lunch-018",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-019",
+      "slotId": "track-backup-slot-019",
+      "dishId": "dish-lunch-019",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-020",
+      "slotId": "track-backup-slot-020",
+      "dishId": "dish-lunch-020",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-021",
+      "slotId": "track-backup-slot-021",
+      "dishId": "dish-lunch-021",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-022",
+      "slotId": "track-backup-slot-022",
+      "dishId": "dish-lunch-022",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-023",
+      "slotId": "track-backup-slot-023",
+      "dishId": "dish-lunch-023",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-024",
+      "slotId": "track-backup-slot-024",
+      "dishId": "dish-lunch-024",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-025",
+      "slotId": "track-backup-slot-025",
+      "dishId": "dish-lunch-025",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-026",
+      "slotId": "track-backup-slot-026",
+      "dishId": "dish-lunch-026",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-027",
+      "slotId": "track-backup-slot-027",
+      "dishId": "dish-lunch-027",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-028",
+      "slotId": "track-backup-slot-028",
+      "dishId": "dish-lunch-028",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-029",
+      "slotId": "track-backup-slot-029",
+      "dishId": "dish-lunch-029",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-030",
+      "slotId": "track-backup-slot-030",
+      "dishId": "dish-lunch-030",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-031",
+      "slotId": "track-backup-slot-031",
+      "dishId": "dish-lunch-031",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-032",
+      "slotId": "track-backup-slot-032",
+      "dishId": "dish-lunch-032",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-033",
+      "slotId": "track-backup-slot-033",
+      "dishId": "dish-lunch-033",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-034",
+      "slotId": "track-backup-slot-034",
+      "dishId": "dish-lunch-034",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-035",
+      "slotId": "track-backup-slot-035",
+      "dishId": "dish-lunch-035",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-036",
+      "slotId": "track-backup-slot-036",
+      "dishId": "dish-lunch-036",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-037",
+      "slotId": "track-backup-slot-037",
+      "dishId": "dish-lunch-037",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-038",
+      "slotId": "track-backup-slot-038",
+      "dishId": "dish-lunch-038",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-039",
+      "slotId": "track-backup-slot-039",
+      "dishId": "dish-lunch-039",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-040",
+      "slotId": "track-backup-slot-040",
+      "dishId": "dish-lunch-040",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-041",
+      "slotId": "track-backup-slot-041",
+      "dishId": "dish-lunch-041",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-042",
+      "slotId": "track-backup-slot-042",
+      "dishId": "dish-lunch-042",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-043",
+      "slotId": "track-backup-slot-043",
+      "dishId": "dish-lunch-043",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-044",
+      "slotId": "track-backup-slot-044",
+      "dishId": "dish-lunch-044",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-045",
+      "slotId": "track-backup-slot-045",
+      "dishId": "dish-lunch-045",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-046",
+      "slotId": "track-backup-slot-046",
+      "dishId": "dish-lunch-046",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-047",
+      "slotId": "track-backup-slot-047",
+      "dishId": "dish-lunch-047",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-048",
+      "slotId": "track-backup-slot-048",
+      "dishId": "dish-lunch-048",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-049",
+      "slotId": "track-backup-slot-049",
+      "dishId": "dish-lunch-049",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-050",
+      "slotId": "track-backup-slot-050",
+      "dishId": "dish-lunch-050",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-051",
+      "slotId": "track-backup-slot-051",
+      "dishId": "dish-lunch-051",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-052",
+      "slotId": "track-backup-slot-052",
+      "dishId": "dish-lunch-052",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-053",
+      "slotId": "track-backup-slot-053",
+      "dishId": "dish-lunch-053",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-054",
+      "slotId": "track-backup-slot-054",
+      "dishId": "dish-lunch-054",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-055",
+      "slotId": "track-backup-slot-055",
+      "dishId": "dish-lunch-055",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-056",
+      "slotId": "track-backup-slot-056",
+      "dishId": "dish-lunch-056",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-057",
+      "slotId": "track-backup-slot-057",
+      "dishId": "dish-lunch-057",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-058",
+      "slotId": "track-backup-slot-058",
+      "dishId": "dish-lunch-058",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-059",
+      "slotId": "track-backup-slot-059",
+      "dishId": "dish-lunch-059",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-060",
+      "slotId": "track-backup-slot-060",
+      "dishId": "dish-lunch-060",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-061",
+      "slotId": "track-backup-slot-061",
+      "dishId": "dish-lunch-061",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-062",
+      "slotId": "track-backup-slot-062",
+      "dishId": "dish-lunch-062",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-063",
+      "slotId": "track-backup-slot-063",
+      "dishId": "dish-lunch-063",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-064",
+      "slotId": "track-backup-slot-064",
+      "dishId": "dish-lunch-064",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-065",
+      "slotId": "track-backup-slot-065",
+      "dishId": "dish-lunch-065",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-066",
+      "slotId": "track-backup-slot-066",
+      "dishId": "dish-lunch-066",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-067",
+      "slotId": "track-backup-slot-067",
+      "dishId": "dish-lunch-067",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-068",
+      "slotId": "track-backup-slot-068",
+      "dishId": "dish-lunch-068",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-069",
+      "slotId": "track-backup-slot-069",
+      "dishId": "dish-lunch-069",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-070",
+      "slotId": "track-backup-slot-070",
+      "dishId": "dish-lunch-070",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-071",
+      "slotId": "track-backup-slot-071",
+      "dishId": "dish-lunch-071",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-072",
+      "slotId": "track-backup-slot-072",
+      "dishId": "dish-lunch-072",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-073",
+      "slotId": "track-backup-slot-073",
+      "dishId": "dish-lunch-073",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-074",
+      "slotId": "track-backup-slot-074",
+      "dishId": "dish-lunch-074",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-075",
+      "slotId": "track-backup-slot-075",
+      "dishId": "dish-lunch-075",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-076",
+      "slotId": "track-backup-slot-076",
+      "dishId": "dish-lunch-076",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-077",
+      "slotId": "track-backup-slot-077",
+      "dishId": "dish-lunch-077",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    },
+    {
+      "plateId": "plate-filled-track-backup-slot-078",
+      "slotId": "track-backup-slot-078",
+      "dishId": "dish-lunch-078",
+      "diameterM": 0.32,
+      "heightM": 0.08
+    }
+  ]
+}

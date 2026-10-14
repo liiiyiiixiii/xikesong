@@ -1,0 +1,1 @@
+export function GET(){return Response.json({error:{code:'LEGACY_RETIRED',message:'旧独立午餐时钟已停用，请使用 /api/demo/v1/state',requestId:crypto.randomUUID()}},{status:410,headers:{'Cache-Control':'no-store'}});}

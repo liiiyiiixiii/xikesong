@@ -2,7 +2,7 @@
 from pathlib import Path, PurePosixPath
 import hashlib, json, shutil, sys, zipfile
 ROOT = Path(__file__).resolve().parents[1]
-META = json.loads((ROOT / 'datasets/manifest.json').read_text())
+META = json.loads((ROOT / 'datasets' / ('lunch-rush-manifest.json' if '--rush' in sys.argv else 'manifest.json')).read_text())
 archive = ROOT / 'datasets' / META['archive']
 def digest(path):
     h = hashlib.sha256()
@@ -19,9 +19,10 @@ with zipfile.ZipFile(archive) as z:
     for name, item in files.items():
         parts = PurePosixPath(name).parts
         assert not name.startswith('/') and '..' not in parts and '\\' not in name, 'Unsafe archive path'
-        if parts[0] == 'csv': base = ROOT / 'sample-provider/data'
-        elif parts[0] == 'lunch-demo': base = ROOT / 'red-koala/data/lunch-demo'
-        elif parts[0] == 'unified-36x42-20260903-20261005-v4': base = ROOT / 'sample-provider/output' / parts[0]
+        if parts[0] == 'csv': base = ROOT / 'tools/sample-provider/data'
+        elif parts[0] == 'demo-v1': base = ROOT / 'apps/web/data/demo-v1'
+        elif parts[0] == 'lunch-demo': base = ROOT / 'apps/web/data/lunch-demo'
+        elif parts[0] == 'unified-36x42-20260903-20261005-v4': base = ROOT / 'tools/sample-provider/output' / parts[0]
         else: raise ValueError('Unexpected dataset root')
         dest = base.joinpath(*parts[1:])
         assert not any(p.is_symlink() for p in [dest, *dest.parents] if p != ROOT.parent), 'Symlink destination rejected'
@@ -35,3 +36,14 @@ with zipfile.ZipFile(archive) as z:
             dest.parent.mkdir(parents=True, exist_ok=True)
             with z.open(name) as source, dest.open('wb') as target: shutil.copyfileobj(source, target)
 print(('Verified' if verify_only else 'Verified and extracted') + f' {len(files)} files; synthetic dataset {META["datasetId"]}')
+
+if '--rush' not in sys.argv:
+    import subprocess
+    subprocess.run([sys.executable, __file__, '--rush', *(['--verify-only'] if verify_only else [])], check=True)
+else:
+    scene = json.loads((ROOT / 'apps/restaurant-3d/public/data/scene-manifest.v1.json').read_text())
+    with zipfile.ZipFile(archive) as z:
+        published = json.loads(z.read('demo-v1/scene-manifest.v1.json'))
+        dataset = json.loads(z.read('demo-v1/dataset.json'))
+    assert scene == published, '3D and backend scene manifests differ'
+    assert dataset['sceneDigest'] == scene['contentDigest'], 'Scene digest mismatch'

@@ -1,0 +1,14 @@
+{
+  "pages": 38,
+  "module_count": 15,
+  "plan_count": 8,
+  "acceptance_count": 12,
+  "missing_content": [],
+  "outside_bounds": [],
+  "review_date": "2026-10-14",
+  "pdf_visual_review": "38 pages reviewed; cover corrected and rechecked",
+  "business_tests_rerun": false,
+  "markdown_sha256": "9d68590d717d3c9cd81284fc8aca917a84e9a2c379f36074d343d376bceae2bf",
+  "pdf_sha256": "2b12f9cdad1f00e15a450ed5dd4a8cf5cd5f9f9b6eef21cc964eafa871a071c1",
+  "requirements_copy_sha256": "4a3587c882489e44742b0f351643292acbbb41312e3a7fc4efa856a4a44adbeb"
+}
